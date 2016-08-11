@@ -1,19 +1,18 @@
 //
-//  ViewController.m
+//  ThirdViewController.m
 //  CoOntacts
 //
 //  Created by ALUNO on 10/08/16.
 //  Copyright © 2016 Weuller. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ThirdViewController.h"
 
-@interface ViewController ()
-
+@interface ThirdViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ThirdViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,7 +24,7 @@
 
 
 - (void) applyBackgroudColor{
-
+    
     // Create the colors
     //255 165 000
     UIColor *bottomColor = [UIColor colorWithRed:255.0/255.0 green:200.0/255.0 blue:50.0/255.0 alpha:1.0];
@@ -45,9 +44,20 @@
 }
 
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end
