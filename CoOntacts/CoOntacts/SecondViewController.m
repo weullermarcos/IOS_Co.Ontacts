@@ -57,4 +57,27 @@
 }
 */
 
+- (IBAction)LoginAction:(id)sender {
+    
+    if([self.txtLogin.text isEqual: @"weuller"] && [self.txtPassword.text isEqual: @"123"]){
+    
+        //Direciona para a proxima tela
+        [self performSegueWithIdentifier:@"segueLoginSuccess" sender:self];
+        
+    }
+    else{
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alerta"
+                                                        message:@"Os dados de acesso estão incorretos"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+    }
+    
+}
+
+
+
 @end

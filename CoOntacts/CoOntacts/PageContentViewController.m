@@ -1,27 +1,30 @@
 //
-//  ThirdViewController.m
+//  PageContentViewController.m
 //  CoOntacts
 //
-//  Created by ALUNO on 10/08/16.
+//  Created by Hoff Silva on 14/09/16.
 //  Copyright © 2016 Weuller. All rights reserved.
 //
 
-#import "ThirdViewController.h"
+#import "PageContentViewController.h"
 
-@interface ThirdViewController ()
+@interface PageContentViewController ()
 
 @end
 
-@implementation ThirdViewController
+@implementation PageContentViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.label_Instruction.text = self.titleText;
     [self applyBackgroudColor];
-    
+    // Do any additional setup after loading the view.
 }
 
-
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 - (void) applyBackgroudColor{
     
@@ -43,12 +46,6 @@
     
 }
 
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 /*
 #pragma mark - Navigation

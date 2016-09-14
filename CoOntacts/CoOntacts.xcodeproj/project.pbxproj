@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B34DBD61D89A8B900EBD976 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B34DBD51D89A8B900EBD976 /* PageContentViewController.m */; };
+		0B34DBD91D89B65200EBD976 /* InitialTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B34DBD81D89B65200EBD976 /* InitialTableViewController.m */; };
 		577B56071D5C034D0042E5D3 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 577B56061D5C034D0042E5D3 /* SecondViewController.m */; };
-		577B560A1D5C05A30042E5D3 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 577B56091D5C05A30042E5D3 /* ThirdViewController.m */; };
 		57FFE7641D5BEE3700A8F4C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFE7631D5BEE3700A8F4C3 /* main.m */; };
 		57FFE7671D5BEE3700A8F4C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFE7661D5BEE3700A8F4C3 /* AppDelegate.m */; };
 		57FFE76A1D5BEE3700A8F4C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FFE7691D5BEE3700A8F4C3 /* ViewController.m */; };
@@ -19,10 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B34DBD41D89A8B900EBD976 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
+		0B34DBD51D89A8B900EBD976 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
+		0B34DBD71D89B65200EBD976 /* InitialTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialTableViewController.h; sourceTree = "<group>"; };
+		0B34DBD81D89B65200EBD976 /* InitialTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialTableViewController.m; sourceTree = "<group>"; };
 		577B56051D5C034D0042E5D3 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		577B56061D5C034D0042E5D3 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		577B56081D5C05A30042E5D3 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
-		577B56091D5C05A30042E5D3 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		57FFE75F1D5BEE3700A8F4C3 /* CoOntacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoOntacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57FFE7631D5BEE3700A8F4C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		57FFE7651D5BEE3700A8F4C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -72,14 +75,16 @@
 				57FFE7691D5BEE3700A8F4C3 /* ViewController.m */,
 				577B56051D5C034D0042E5D3 /* SecondViewController.h */,
 				577B56061D5C034D0042E5D3 /* SecondViewController.m */,
-				577B56081D5C05A30042E5D3 /* ThirdViewController.h */,
-				577B56091D5C05A30042E5D3 /* ThirdViewController.m */,
 				57FFE76B1D5BEE3700A8F4C3 /* Main.storyboard */,
 				57FFE7711D5BEE3700A8F4C3 /* Assets.xcassets */,
 				57FFE7731D5BEE3700A8F4C3 /* LaunchScreen.storyboard */,
 				57FFE7761D5BEE3700A8F4C3 /* Info.plist */,
 				57FFE76E1D5BEE3700A8F4C3 /* CoOntacts.xcdatamodeld */,
 				57FFE7621D5BEE3700A8F4C3 /* Supporting Files */,
+				0B34DBD41D89A8B900EBD976 /* PageContentViewController.h */,
+				0B34DBD51D89A8B900EBD976 /* PageContentViewController.m */,
+				0B34DBD71D89B65200EBD976 /* InitialTableViewController.h */,
+				0B34DBD81D89B65200EBD976 /* InitialTableViewController.m */,
 			);
 			path = CoOntacts;
 			sourceTree = "<group>";
@@ -164,8 +169,9 @@
 			files = (
 				577B56071D5C034D0042E5D3 /* SecondViewController.m in Sources */,
 				57FFE7701D5BEE3700A8F4C3 /* CoOntacts.xcdatamodeld in Sources */,
-				577B560A1D5C05A30042E5D3 /* ThirdViewController.m in Sources */,
+				0B34DBD61D89A8B900EBD976 /* PageContentViewController.m in Sources */,
 				57FFE76A1D5BEE3700A8F4C3 /* ViewController.m in Sources */,
+				0B34DBD91D89B65200EBD976 /* InitialTableViewController.m in Sources */,
 				57FFE7671D5BEE3700A8F4C3 /* AppDelegate.m in Sources */,
 				57FFE7641D5BEE3700A8F4C3 /* main.m in Sources */,
 			);
