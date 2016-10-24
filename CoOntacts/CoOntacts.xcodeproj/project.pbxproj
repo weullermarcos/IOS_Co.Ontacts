@@ -17,6 +17,8 @@
 		57FFE7701D5BEE3700A8F4C3 /* CoOntacts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57FFE76E1D5BEE3700A8F4C3 /* CoOntacts.xcdatamodeld */; };
 		57FFE7721D5BEE3700A8F4C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57FFE7711D5BEE3700A8F4C3 /* Assets.xcassets */; };
 		57FFE7751D5BEE3700A8F4C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FFE7731D5BEE3700A8F4C3 /* LaunchScreen.storyboard */; };
+		D3E533191DBEAFD10018669C /* Contato+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E533161DBEAFD10018669C /* Contato+CoreDataClass.m */; };
+		D3E5331A1DBEAFD10018669C /* Contato+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E533181DBEAFD10018669C /* Contato+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		57FFE7711D5BEE3700A8F4C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57FFE7741D5BEE3700A8F4C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57FFE7761D5BEE3700A8F4C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3E533151DBEAFD10018669C /* Contato+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Contato+CoreDataClass.h"; path = "../../../CoOntacts/Contato+CoreDataClass.h"; sourceTree = "<group>"; };
+		D3E533161DBEAFD10018669C /* Contato+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Contato+CoreDataClass.m"; path = "../../../CoOntacts/Contato+CoreDataClass.m"; sourceTree = "<group>"; };
+		D3E533171DBEAFD10018669C /* Contato+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Contato+CoreDataProperties.h"; path = "../../../CoOntacts/Contato+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D3E533181DBEAFD10018669C /* Contato+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Contato+CoreDataProperties.m"; path = "../../../CoOntacts/Contato+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,7 @@
 		57FFE7611D5BEE3700A8F4C3 /* CoOntacts */ = {
 			isa = PBXGroup;
 			children = (
+				D3E533141DBEAFB80018669C /* Entidades */,
 				57FFE7651D5BEE3700A8F4C3 /* AppDelegate.h */,
 				57FFE7661D5BEE3700A8F4C3 /* AppDelegate.m */,
 				57FFE7681D5BEE3700A8F4C3 /* ViewController.h */,
@@ -95,6 +102,17 @@
 				57FFE7631D5BEE3700A8F4C3 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D3E533141DBEAFB80018669C /* Entidades */ = {
+			isa = PBXGroup;
+			children = (
+				D3E533151DBEAFD10018669C /* Contato+CoreDataClass.h */,
+				D3E533161DBEAFD10018669C /* Contato+CoreDataClass.m */,
+				D3E533171DBEAFD10018669C /* Contato+CoreDataProperties.h */,
+				D3E533181DBEAFD10018669C /* Contato+CoreDataProperties.m */,
+			);
+			name = Entidades;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +146,7 @@
 				TargetAttributes = {
 					57FFE75E1D5BEE3700A8F4C3 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -171,8 +190,10 @@
 				57FFE7701D5BEE3700A8F4C3 /* CoOntacts.xcdatamodeld in Sources */,
 				0B34DBD61D89A8B900EBD976 /* PageContentViewController.m in Sources */,
 				57FFE76A1D5BEE3700A8F4C3 /* ViewController.m in Sources */,
+				D3E5331A1DBEAFD10018669C /* Contato+CoreDataProperties.m in Sources */,
 				0B34DBD91D89B65200EBD976 /* InitialTableViewController.m in Sources */,
 				57FFE7671D5BEE3700A8F4C3 /* AppDelegate.m in Sources */,
+				D3E533191DBEAFD10018669C /* Contato+CoreDataClass.m in Sources */,
 				57FFE7641D5BEE3700A8F4C3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,10 +308,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CoOntacts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.weuller.CoOntacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -298,10 +322,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CoOntacts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.weuller.CoOntacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
