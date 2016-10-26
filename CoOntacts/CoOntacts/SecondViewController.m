@@ -94,31 +94,39 @@
     //Criando contexto
     NSManagedObjectContext *context = containerPersistencia.viewContext;
     
-    
-    //Criando um novo objeto do tipo contato para ser inserido no BD
-    Contato *contato = [NSEntityDescription insertNewObjectForEntityForName:@"Contato"
-                                                   inManagedObjectContext:context];
-    
-    [contato setNome:@"Contato"];
-    [contato setEmail:@"Usuario@empresa.com"];
-    [contato setTelefone:@"3333-3554"];
-    [contato setDescricao:@"Descricao x"];
-    //[contato setReceberNotificacoes:true];
-    
-    
-    NSError *errorCoreData;
-    
-    if([context save:&errorCoreData]){
+    for (int i=0; i < 5; i++) {
         
-        NSLog(@"Dados salvos com sucesso");
+        //Criando um novo objeto do tipo contato para ser inserido no BD
+        Contato *contato = [NSEntityDescription insertNewObjectForEntityForName:@"Contato"
+                                                         inManagedObjectContext:context];
+        
+        NSMutableString  *nome = [[NSMutableString alloc] init];
+        
+        [nome appendString:@"Contato "];
+        [nome appendString: [NSString stringWithFormat:@"%i", i]];
+        
+        
+        [contato setNome:nome];
+        [contato setEmail:@"Usuario@empresa.com"];
+        [contato setTelefone:@"3333-3554"];
+        [contato setDescricao:@"Descricao x"];
+        //[contato setReceberNotificacoes:true];
+        
+        
+        NSError *errorCoreData;
+        
+        if([context save:&errorCoreData]){
+            
+            NSLog(@"Dados salvos com sucesso");
+            
+        }
+        else{
+            
+            NSLog(@"Erro ao salvar dados");
+            
+        }
         
     }
-    else{
-        
-        NSLog(@"Erro ao salvar dados");
-        
-    }
-    
     
 }
 
