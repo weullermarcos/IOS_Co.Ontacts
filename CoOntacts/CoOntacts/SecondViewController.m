@@ -7,6 +7,8 @@
 //
 
 #import "SecondViewController.h"
+#import "AppDelegate.h"
+#import "Contato+CoreDataClass.h"
 
 @interface SecondViewController ()
 
@@ -16,10 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self applyBackgroudColor];
     
 }
-
 
 
 - (void) applyBackgroudColor{
@@ -61,20 +63,62 @@
     
     if([self.txtLogin.text isEqual: @"weuller"] && [self.txtPassword.text isEqual: @"123"]){
     
+        //Inserir usuários na base local
+        [self insereDadosCarga];
+        
         //Direciona para a proxima tela
         [self performSegueWithIdentifier:@"segueLoginSuccess" sender:self];
         
     }
     else{
         
+        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alerta"
-                                                        message:@"Os dados de acesso estão incorretos"
+                                                        message:@"Os dados de acesso estão incorretos utilize login: weuller senha: 123"
                                                        delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
         
     }
+    
+}
+
+- (void) insereDadosCarga{
+    
+    
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    NSPersistentContainer *containerPersistencia = delegate.persistentContainer;
+    
+    //Criando contexto
+    NSManagedObjectContext *context = containerPersistencia.viewContext;
+    
+    
+    //Criando um novo objeto do tipo contato para ser inserido no BD
+    Contato *contato = [NSEntityDescription insertNewObjectForEntityForName:@"Contato"
+                                                   inManagedObjectContext:context];
+    
+    [contato setNome:@"Contato"];
+    [contato setEmail:@"Usuario@empresa.com"];
+    [contato setTelefone:@"3333-3554"];
+    [contato setDescricao:@"Descricao x"];
+    //[contato setReceberNotificacoes:true];
+    
+    
+    NSError *errorCoreData;
+    
+    if([context save:&errorCoreData]){
+        
+        NSLog(@"Dados salvos com sucesso");
+        
+    }
+    else{
+        
+        NSLog(@"Erro ao salvar dados");
+        
+    }
+    
     
 }
 

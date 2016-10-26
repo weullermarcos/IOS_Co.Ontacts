@@ -7,8 +7,12 @@
 //
 
 #import "InitialTableViewController.h"
+#import "AppDelegate.h"
+#import "Contato+CoreDataClass.h"
 
-@interface InitialTableViewController ()
+@interface InitialTableViewController () <NSFetchedResultsControllerDelegate>
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -17,50 +21,91 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.names = [[NSMutableArray alloc] init];
-    [self.names  addObject:@"Paulo"];
-    [self.names  addObject:@"Jonatas"];
-    [self.names  addObject:@"Pedro"];
-    [self.names  addObject:@"Augusto"];
-    [self.names  addObject:@"Hoff"];
+    [self setTitle:@"Contatos"];
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+// Método para recuperar dados do BD
+- (NSFetchedResultsController *)fetchedResultsController {
+    
+    if (!_fetchedResultsController) {
+        
+        AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        NSPersistentContainer *persistentContainer = delegate.persistentContainer;
+        
+        NSFetchRequest *fetchRequest = [Contato fetchRequest];
+        [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"nome" ascending:YES]]];
+        
+        _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                                                        managedObjectContext:persistentContainer.viewContext
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:nil];
+        [_fetchedResultsController setDelegate:self];
+    }
+    return _fetchedResultsController;
+    
 }
+
+// Vai aparecer
+- (void) viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    NSError *erro;
+    
+    if( [self.fetchedResultsController performFetch:&erro] ){
+        
+        //Sucesso
+        [self.tableView reloadData];
+        
+    }
+    else{
+        
+        //erro
+        NSLog(@"Erro ao recuperar pessoas");
+        
+    }
+    
+}
+
+
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 1;
+    return self.fetchedResultsController.sections.count;
+
 }
 
+//Retorna o número de elementos que será apresentado na tablea
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
     
-    return [self.names count];
+    return [[self.fetchedResultsController.sections objectAtIndex:section] numberOfObjects];
 }
 
-
+//Configura a celula que sera mostrada na tabela
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    static NSString *simpleTableIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"celulaPadrao" forIndexPath:indexPath];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    Contato *contato = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-    }
+    //Exibe o nome do contato na célula
+    [cell.textLabel setText:contato.nome];
     
-    cell.textLabel.text = [self.names objectAtIndex:indexPath.row];
     return cell;
     
 }
 
 
+- (void) configurarCelula: (UITableViewCell *) cell noIndexPath: (NSIndexPath *) indexPath {
+    Contato *contato = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [cell.textLabel setText:contato.nome];
+}
 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -69,22 +114,84 @@
 }
 
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    //Apagando itens
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
         
-        [self.names removeObjectAtIndex:indexPath.row];
+        Contato *contato = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [self.fetchedResultsController.managedObjectContext deleteObject:contato];
         
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        NSError *erroCoreData;
         
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+        if (![self.fetchedResultsController.managedObjectContext save:&erroCoreData]) {
+            NSLog(@"Deu erro: %@", erroCoreData);
+        }
+    }
+    
 }
 
+#pragma mark - NSFetchedResultsControllerDelegate
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView beginUpdates];
+}
+
+
+- (void)controller:(NSFetchedResultsController *)controller
+  didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex
+     forChangeType:(NSFetchedResultsChangeType)type {
+    
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath
+     forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            if (newIndexPath) {
+                [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
+            break;
+        case NSFetchedResultsChangeDelete:
+            if (indexPath) {
+                [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
+            break;
+        case NSFetchedResultsChangeUpdate:
+            [self configurarCelula:[self.tableView cellForRowAtIndexPath:indexPath] noIndexPath:indexPath];
+            break;
+        case NSFetchedResultsChangeMove:
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView endUpdates];
+}
 
 /*
 // Override to support rearranging the table view.
@@ -109,5 +216,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 @end
