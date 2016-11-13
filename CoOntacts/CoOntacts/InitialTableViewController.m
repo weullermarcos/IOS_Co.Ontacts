@@ -23,10 +23,20 @@
     
     [self setTitle:@"Contatos"];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //Botao para adicionar novo contato
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(Add:)];
+    
     
 }
+
+//Direciona para a tela de novo contato
+-(IBAction)Add:(id)sender
+{
+    //Direciona para a proxima tela
+    [self performSegueWithIdentifier:@"segueAddContatct" sender:self];
+    
+}
+
 
 // Método para recuperar dados do BD
 - (NSFetchedResultsController *)fetchedResultsController {

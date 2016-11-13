@@ -75,17 +75,11 @@
 		57FFE7611D5BEE3700A8F4C3 /* CoOntacts */ = {
 			isa = PBXGroup;
 			children = (
+				D30795301DD8C7C60061DED1 /* TableViewControllers */,
+				D307952F1DD8C7AF0061DED1 /* ViewControllers */,
 				D3E533141DBEAFB80018669C /* Entidades */,
 				57FFE7651D5BEE3700A8F4C3 /* AppDelegate.h */,
 				57FFE7661D5BEE3700A8F4C3 /* AppDelegate.m */,
-				57FFE7681D5BEE3700A8F4C3 /* ViewController.h */,
-				57FFE7691D5BEE3700A8F4C3 /* ViewController.m */,
-				577B56051D5C034D0042E5D3 /* SecondViewController.h */,
-				577B56061D5C034D0042E5D3 /* SecondViewController.m */,
-				0B34DBD41D89A8B900EBD976 /* PageContentViewController.h */,
-				0B34DBD51D89A8B900EBD976 /* PageContentViewController.m */,
-				0B34DBD71D89B65200EBD976 /* InitialTableViewController.h */,
-				0B34DBD81D89B65200EBD976 /* InitialTableViewController.m */,
 				57FFE76B1D5BEE3700A8F4C3 /* Main.storyboard */,
 				57FFE7711D5BEE3700A8F4C3 /* Assets.xcassets */,
 				57FFE7731D5BEE3700A8F4C3 /* LaunchScreen.storyboard */,
@@ -102,6 +96,28 @@
 				57FFE7631D5BEE3700A8F4C3 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D307952F1DD8C7AF0061DED1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				57FFE7681D5BEE3700A8F4C3 /* ViewController.h */,
+				57FFE7691D5BEE3700A8F4C3 /* ViewController.m */,
+				577B56051D5C034D0042E5D3 /* SecondViewController.h */,
+				577B56061D5C034D0042E5D3 /* SecondViewController.m */,
+				0B34DBD41D89A8B900EBD976 /* PageContentViewController.h */,
+				0B34DBD51D89A8B900EBD976 /* PageContentViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D30795301DD8C7C60061DED1 /* TableViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0B34DBD71D89B65200EBD976 /* InitialTableViewController.h */,
+				0B34DBD81D89B65200EBD976 /* InitialTableViewController.m */,
+			);
+			name = TableViewControllers;
 			sourceTree = "<group>";
 		};
 		D3E533141DBEAFB80018669C /* Entidades */ = {

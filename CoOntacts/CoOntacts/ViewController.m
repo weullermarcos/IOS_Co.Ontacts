@@ -17,7 +17,9 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
     _pageTitles = @[@"Página de Apresentacao 1", @"Página de Apresentacao 2"];
     
     // Create page view controller
@@ -26,6 +28,7 @@
     
     PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
+    
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     // Change the size of page view controller
@@ -47,10 +50,8 @@
         return nil;
     }
     
-    
-
-    
     index--;
+    
     return [self viewControllerAtIndex:index];
 }
 
