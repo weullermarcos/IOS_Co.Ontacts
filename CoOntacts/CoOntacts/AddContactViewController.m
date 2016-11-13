@@ -11,7 +11,7 @@
 #import "Contato+CoreDataClass.h"
 
 
-@interface AddContactViewController ()
+@interface AddContactViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @end
 
@@ -19,7 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    //Tornando a imagem clicavel
+    [self.userImage setUserInteractionEnabled:YES];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(uploadImage:)];
+    
+    [self.userImage addGestureRecognizer:tap];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,11 +44,32 @@
 }
 */
 
+
 //Carrega imagem da galeria
 - (IBAction)uploadImage:(id)sender {
     
+    //importante ir no arquivo info.plist e adicionar permissão para acessar albúm de fotos:
+    //Privacy - Photo Library Usage Description
+    
+    UIImagePickerController * picker = [UIImagePickerController new];
+    [picker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [picker setDelegate:self];
+    
+    [self presentViewController:picker animated:YES completion:nil];
     
 }
+
+//Metodo executado após selecionar foto
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    
+    UIImage *imagem = info[UIImagePickerControllerOriginalImage];
+    
+    [self.userImage setImage:imagem];
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
 
 //Volta para a tela anterior
 - (IBAction)cancel:(id)sender {
@@ -69,6 +97,7 @@
     }
     else{
     
+        //TODO: Inserir imagem no BD
         
         AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
         
