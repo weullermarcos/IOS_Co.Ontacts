@@ -17,6 +17,7 @@
 		57FFE7701D5BEE3700A8F4C3 /* CoOntacts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57FFE76E1D5BEE3700A8F4C3 /* CoOntacts.xcdatamodeld */; };
 		57FFE7721D5BEE3700A8F4C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57FFE7711D5BEE3700A8F4C3 /* Assets.xcassets */; };
 		57FFE7751D5BEE3700A8F4C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FFE7731D5BEE3700A8F4C3 /* LaunchScreen.storyboard */; };
+		D30795331DD8D6260061DED1 /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D30795321DD8D6260061DED1 /* AddContactViewController.m */; };
 		D395523E1DC0F55D0098E528 /* Contato+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D395523B1DC0F55D0098E528 /* Contato+CoreDataClass.m */; };
 		D395523F1DC0F55D0098E528 /* Contato+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D395523D1DC0F55D0098E528 /* Contato+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,8 @@
 		57FFE7711D5BEE3700A8F4C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57FFE7741D5BEE3700A8F4C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57FFE7761D5BEE3700A8F4C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D30795311DD8D6260061DED1 /* AddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContactViewController.h; sourceTree = "<group>"; };
+		D30795321DD8D6260061DED1 /* AddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContactViewController.m; sourceTree = "<group>"; };
 		D395523A1DC0F55D0098E528 /* Contato+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Contato+CoreDataClass.h"; path = "../Contato+CoreDataClass.h"; sourceTree = "<group>"; };
 		D395523B1DC0F55D0098E528 /* Contato+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Contato+CoreDataClass.m"; path = "../Contato+CoreDataClass.m"; sourceTree = "<group>"; };
 		D395523C1DC0F55D0098E528 /* Contato+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Contato+CoreDataProperties.h"; path = "../Contato+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				577B56061D5C034D0042E5D3 /* SecondViewController.m */,
 				0B34DBD41D89A8B900EBD976 /* PageContentViewController.h */,
 				0B34DBD51D89A8B900EBD976 /* PageContentViewController.m */,
+				D30795311DD8D6260061DED1 /* AddContactViewController.h */,
+				D30795321DD8D6260061DED1 /* AddContactViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 				577B56071D5C034D0042E5D3 /* SecondViewController.m in Sources */,
 				57FFE7701D5BEE3700A8F4C3 /* CoOntacts.xcdatamodeld in Sources */,
 				0B34DBD61D89A8B900EBD976 /* PageContentViewController.m in Sources */,
+				D30795331DD8D6260061DED1 /* AddContactViewController.m in Sources */,
 				57FFE76A1D5BEE3700A8F4C3 /* ViewController.m in Sources */,
 				D395523F1DC0F55D0098E528 /* Contato+CoreDataProperties.m in Sources */,
 				0B34DBD91D89B65200EBD976 /* InitialTableViewController.m in Sources */,

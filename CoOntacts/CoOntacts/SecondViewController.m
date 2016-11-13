@@ -64,7 +64,7 @@
     if([self.txtLogin.text isEqual: @"weuller"] && [self.txtPassword.text isEqual: @"123"]){
     
         //Inserir usuários na base local
-        [self insereDadosCarga];
+        //[self insereDadosCarga];
         
         //Direciona para a proxima tela
         [self performSegueWithIdentifier:@"segueLoginSuccess" sender:self];
