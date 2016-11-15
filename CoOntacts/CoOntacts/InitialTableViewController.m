@@ -9,6 +9,7 @@
 #import "InitialTableViewController.h"
 #import "AppDelegate.h"
 #import "Contato+CoreDataClass.h"
+#import "ContactTableViewCell.h"
 
 @interface InitialTableViewController () <NSFetchedResultsControllerDelegate>
 
@@ -22,6 +23,11 @@
     [super viewDidLoad];
     
     [self setTitle:@"Contatos"];
+    
+    self.tableView.delegate = self;
+    
+    UINib *cell = [UINib nibWithNibName:@"ContactTableViewCell" bundle:[NSBundle mainBundle]];
+    [self.tableView registerNib:cell forCellReuseIdentifier:@"ContactTableViewCell"];
     
     //Botao para adicionar novo contato
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(Add:)];
@@ -100,19 +106,38 @@
 //Configura a celula que sera mostrada na tabela
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"celulaPadrao" forIndexPath:indexPath];
+    
+    ContactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ContactTableViewCell" forIndexPath:indexPath];
     
     Contato *contato = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    //Exibe o nome do contato na célula
-    [cell.textLabel setText:contato.nome];
+    [cell.contactName setText:contato.nome];
+    [cell.contactPhone setText:contato.telefone];
+    
+    UIImage *image = [UIImage imageWithData:contato.imagem];
+    
+    //Seta a imagem recuperada
+    [cell.contactImage setImage:image];
     
     return cell;
     
 }
 
 
+#pragma mark - UITableViewDelegate
+//Retornar aqui a altura estimada da célula... olhe no XIB a altura.
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 125;
+}
+
+//Faz a tableView aceitar células com alturas dinâmicas
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+}
+
+
 - (void) configurarCelula: (UITableViewCell *) cell noIndexPath: (NSIndexPath *) indexPath {
+    
     Contato *contato = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [cell.textLabel setText:contato.nome];
 }

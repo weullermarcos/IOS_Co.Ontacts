@@ -116,6 +116,9 @@
         [contato setTelefone:self.phone.text];
         [contato setDescricao:self.contactDescription.text];
         
+        //Salvando a Imagem
+        [contato setImagem: UIImagePNGRepresentation(self.userImage.image)];
+        
         
         NSError *errorCoreData;
         

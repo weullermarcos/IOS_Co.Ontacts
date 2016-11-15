@@ -2,7 +2,7 @@
 //  Contato+CoreDataClass.h
 //  CoOntacts
 //
-//  Created by Weuller Marcos on 26/10/16.
+//  Created by Weuller Marcos on 15/11/16.
 //  Copyright © 2016 Weuller. All rights reserved.
 //
 

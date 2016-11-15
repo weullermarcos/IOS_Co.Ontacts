@@ -18,8 +18,10 @@
 		57FFE7721D5BEE3700A8F4C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57FFE7711D5BEE3700A8F4C3 /* Assets.xcassets */; };
 		57FFE7751D5BEE3700A8F4C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FFE7731D5BEE3700A8F4C3 /* LaunchScreen.storyboard */; };
 		D30795331DD8D6260061DED1 /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D30795321DD8D6260061DED1 /* AddContactViewController.m */; };
-		D395523E1DC0F55D0098E528 /* Contato+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D395523B1DC0F55D0098E528 /* Contato+CoreDataClass.m */; };
-		D395523F1DC0F55D0098E528 /* Contato+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D395523D1DC0F55D0098E528 /* Contato+CoreDataProperties.m */; };
+		D374E1401DDB7D700062E5A8 /* Contato+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D374E13D1DDB7D700062E5A8 /* Contato+CoreDataClass.m */; };
+		D374E1411DDB7D700062E5A8 /* Contato+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D374E13F1DDB7D700062E5A8 /* Contato+CoreDataProperties.m */; };
+		D374E1461DDB88600062E5A8 /* ContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D374E1441DDB88600062E5A8 /* ContactTableViewCell.m */; };
+		D374E1471DDB88600062E5A8 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D374E1451DDB88600062E5A8 /* ContactTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,10 +44,13 @@
 		57FFE7761D5BEE3700A8F4C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D30795311DD8D6260061DED1 /* AddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContactViewController.h; sourceTree = "<group>"; };
 		D30795321DD8D6260061DED1 /* AddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContactViewController.m; sourceTree = "<group>"; };
-		D395523A1DC0F55D0098E528 /* Contato+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Contato+CoreDataClass.h"; path = "../Contato+CoreDataClass.h"; sourceTree = "<group>"; };
-		D395523B1DC0F55D0098E528 /* Contato+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Contato+CoreDataClass.m"; path = "../Contato+CoreDataClass.m"; sourceTree = "<group>"; };
-		D395523C1DC0F55D0098E528 /* Contato+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Contato+CoreDataProperties.h"; path = "../Contato+CoreDataProperties.h"; sourceTree = "<group>"; };
-		D395523D1DC0F55D0098E528 /* Contato+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Contato+CoreDataProperties.m"; path = "../Contato+CoreDataProperties.m"; sourceTree = "<group>"; };
+		D374E13C1DDB7D700062E5A8 /* Contato+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Contato+CoreDataClass.h"; path = "../Contato+CoreDataClass.h"; sourceTree = "<group>"; };
+		D374E13D1DDB7D700062E5A8 /* Contato+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Contato+CoreDataClass.m"; path = "../Contato+CoreDataClass.m"; sourceTree = "<group>"; };
+		D374E13E1DDB7D700062E5A8 /* Contato+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Contato+CoreDataProperties.h"; path = "../Contato+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D374E13F1DDB7D700062E5A8 /* Contato+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Contato+CoreDataProperties.m"; path = "../Contato+CoreDataProperties.m"; sourceTree = "<group>"; };
+		D374E1431DDB88600062E5A8 /* ContactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTableViewCell.h; sourceTree = "<group>"; };
+		D374E1441DDB88600062E5A8 /* ContactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTableViewCell.m; sourceTree = "<group>"; };
+		D374E1451DDB88600062E5A8 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +85,8 @@
 			children = (
 				D30795301DD8C7C60061DED1 /* TableViewControllers */,
 				D307952F1DD8C7AF0061DED1 /* ViewControllers */,
-				D3E533141DBEAFB80018669C /* Entidades */,
+				D3E533141DBEAFB80018669C /* Entities */,
+				D374E1421DDB87A50062E5A8 /* XibFiles */,
 				57FFE7651D5BEE3700A8F4C3 /* AppDelegate.h */,
 				57FFE7661D5BEE3700A8F4C3 /* AppDelegate.m */,
 				57FFE76B1D5BEE3700A8F4C3 /* Main.storyboard */,
@@ -125,15 +131,25 @@
 			name = TableViewControllers;
 			sourceTree = "<group>";
 		};
-		D3E533141DBEAFB80018669C /* Entidades */ = {
+		D374E1421DDB87A50062E5A8 /* XibFiles */ = {
 			isa = PBXGroup;
 			children = (
-				D395523A1DC0F55D0098E528 /* Contato+CoreDataClass.h */,
-				D395523B1DC0F55D0098E528 /* Contato+CoreDataClass.m */,
-				D395523C1DC0F55D0098E528 /* Contato+CoreDataProperties.h */,
-				D395523D1DC0F55D0098E528 /* Contato+CoreDataProperties.m */,
+				D374E1431DDB88600062E5A8 /* ContactTableViewCell.h */,
+				D374E1441DDB88600062E5A8 /* ContactTableViewCell.m */,
+				D374E1451DDB88600062E5A8 /* ContactTableViewCell.xib */,
 			);
-			name = Entidades;
+			name = XibFiles;
+			sourceTree = "<group>";
+		};
+		D3E533141DBEAFB80018669C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D374E13C1DDB7D700062E5A8 /* Contato+CoreDataClass.h */,
+				D374E13D1DDB7D700062E5A8 /* Contato+CoreDataClass.m */,
+				D374E13E1DDB7D700062E5A8 /* Contato+CoreDataProperties.h */,
+				D374E13F1DDB7D700062E5A8 /* Contato+CoreDataProperties.m */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D374E1471DDB88600062E5A8 /* ContactTableViewCell.xib in Resources */,
 				57FFE7751D5BEE3700A8F4C3 /* LaunchScreen.storyboard in Resources */,
 				57FFE7721D5BEE3700A8F4C3 /* Assets.xcassets in Resources */,
 				57FFE76D1D5BEE3700A8F4C3 /* Main.storyboard in Resources */,
@@ -209,13 +226,14 @@
 			files = (
 				577B56071D5C034D0042E5D3 /* SecondViewController.m in Sources */,
 				57FFE7701D5BEE3700A8F4C3 /* CoOntacts.xcdatamodeld in Sources */,
+				D374E1461DDB88600062E5A8 /* ContactTableViewCell.m in Sources */,
 				0B34DBD61D89A8B900EBD976 /* PageContentViewController.m in Sources */,
 				D30795331DD8D6260061DED1 /* AddContactViewController.m in Sources */,
 				57FFE76A1D5BEE3700A8F4C3 /* ViewController.m in Sources */,
-				D395523F1DC0F55D0098E528 /* Contato+CoreDataProperties.m in Sources */,
+				D374E1401DDB7D700062E5A8 /* Contato+CoreDataClass.m in Sources */,
 				0B34DBD91D89B65200EBD976 /* InitialTableViewController.m in Sources */,
 				57FFE7671D5BEE3700A8F4C3 /* AppDelegate.m in Sources */,
-				D395523E1DC0F55D0098E528 /* Contato+CoreDataClass.m in Sources */,
+				D374E1411DDB7D700062E5A8 /* Contato+CoreDataProperties.m in Sources */,
 				57FFE7641D5BEE3700A8F4C3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

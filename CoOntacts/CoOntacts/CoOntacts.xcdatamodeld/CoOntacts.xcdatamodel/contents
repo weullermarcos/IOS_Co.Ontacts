@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Contato" representedClassName=".Contato" syncable="YES">
         <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imagem" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="receberNotificacoes" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="telefone" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>

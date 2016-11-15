@@ -2,7 +2,7 @@
 //  Contato+CoreDataProperties.h
 //  CoOntacts
 //
-//  Created by Weuller Marcos on 26/10/16.
+//  Created by Weuller Marcos on 15/11/16.
 //  Copyright © 2016 Weuller. All rights reserved.
 //
 
@@ -18,8 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *descricao;
 @property (nullable, nonatomic, copy) NSString *email;
 @property (nullable, nonatomic, copy) NSString *nome;
-@property (nonatomic) BOOL receberNotificacoes;
 @property (nullable, nonatomic, copy) NSString *telefone;
+@property (nullable, nonatomic, retain) NSData *imagem;
 
 @end
 

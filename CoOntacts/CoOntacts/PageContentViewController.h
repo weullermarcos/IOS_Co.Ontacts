@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PageContentViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UILabel *label_Instruction;
 @property NSUInteger pageIndex;
 @property NSString *titleText;
