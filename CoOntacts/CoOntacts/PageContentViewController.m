@@ -16,9 +16,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.label_Instruction.text = self.titleText;
+    
+    if(self.pageIndex == 2){
+        
+        self.loginButton.hidden = false;
+    }
+    else{
+        
+        self.loginButton.hidden = true;
+    }
+    
     [self applyBackgroudColor];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

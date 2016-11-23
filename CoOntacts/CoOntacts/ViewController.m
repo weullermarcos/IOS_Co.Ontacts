@@ -20,7 +20,7 @@
     
     [super viewDidLoad];
     
-    _pageTitles = @[@"Página de Apresentacao 1", @"Página de Apresentacao 2"];
+    _pageTitles = @[@"Página de Apresentacao 1", @"Página de Apresentacao 2", @"Página de Apresentacao 3"];
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
@@ -44,6 +44,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
+    
     NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
     
     if ((index == 0) || (index == NSNotFound)) {
@@ -57,6 +58,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
+    
     NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
     
     if (index == NSNotFound) {
@@ -73,6 +75,7 @@
 
 - (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index
 {
+    
     if (([self.pageTitles count] == 0) || (index >= [self.pageTitles count])) {
         return nil;
     }
