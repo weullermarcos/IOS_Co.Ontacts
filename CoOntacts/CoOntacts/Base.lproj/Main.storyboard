@@ -275,24 +275,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zf-kA-QGy">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rH4-xG-fmP">
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <segue destination="GuZ-WV-PZh" kind="show" id="1Sd-nC-an0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVK-nr-D3t">
+                                <state key="normal" title="Pular"/>
+                                <connections>
+                                    <segue destination="GuZ-WV-PZh" kind="show" id="pFb-R3-EQ7"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="PPa-7e-A8a">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="242" id="9Ee-hr-C71"/>
+                                    <constraint firstAttribute="height" constant="187" id="yMe-27-mHO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem Vindo ao Co.ontacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zf-kA-QGy">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6zf-kA-QGy" firstAttribute="centerX" secondItem="ZA4-9M-Qvz" secondAttribute="centerX" id="KIW-Kx-33G"/>
-                            <constraint firstItem="6zf-kA-QGy" firstAttribute="centerY" secondItem="ZA4-9M-Qvz" secondAttribute="centerY" id="Uhc-LZ-EYe"/>
-                            <constraint firstItem="MMO-Iq-TuX" firstAttribute="top" secondItem="rH4-xG-fmP" secondAttribute="bottom" constant="20" id="klJ-Qm-VeQ"/>
-                            <constraint firstItem="rH4-xG-fmP" firstAttribute="centerX" secondItem="ZA4-9M-Qvz" secondAttribute="centerX" id="vyg-Ci-6Np"/>
+                            <constraint firstItem="6zf-kA-QGy" firstAttribute="centerX" secondItem="ZA4-9M-Qvz" secondAttribute="centerX" id="QS8-dB-hMK"/>
+                            <constraint firstItem="PPa-7e-A8a" firstAttribute="centerY" secondItem="ZA4-9M-Qvz" secondAttribute="centerY" constant="29" id="S2S-w0-Bwa"/>
+                            <constraint firstItem="PPa-7e-A8a" firstAttribute="centerX" secondItem="ZA4-9M-Qvz" secondAttribute="centerX" id="d8a-pK-4zu"/>
+                            <constraint firstItem="zVK-nr-D3t" firstAttribute="top" secondItem="GPe-Fw-wZA" secondAttribute="bottom" constant="8" id="frI-c7-SAl"/>
+                            <constraint firstItem="6zf-kA-QGy" firstAttribute="top" secondItem="GPe-Fw-wZA" secondAttribute="bottom" constant="66" id="vM2-XF-ASl"/>
+                            <constraint firstItem="zVK-nr-D3t" firstAttribute="trailing" secondItem="ZA4-9M-Qvz" secondAttribute="trailingMargin" id="zLm-Nv-rJt"/>
+                            <constraint firstItem="MMO-Iq-TuX" firstAttribute="top" secondItem="rH4-xG-fmP" secondAttribute="bottom" constant="20" id="zSj-D3-A0s"/>
+                            <constraint firstItem="rH4-xG-fmP" firstAttribute="centerX" secondItem="ZA4-9M-Qvz" secondAttribute="centerX" id="zbD-8F-PtO"/>
                         </constraints>
                     </view>
                     <connections>
@@ -302,7 +318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4e-WF-QxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1995" y="1174"/>
+            <point key="canvasLocation" x="1994.4000000000001" y="1173.4632683658172"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BtF-SZ-c1a">
@@ -341,4 +357,7 @@
     <resources>
         <image name="default_image" width="530" height="530"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="1Sd-nC-an0"/>
+    </inferredMetricsTieBreakers>
 </document>

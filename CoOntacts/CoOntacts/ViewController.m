@@ -20,7 +20,7 @@
     
     [super viewDidLoad];
     
-    _pageTitles = @[@"Página de Apresentacao 1", @"Página de Apresentacao 2", @"Página de Apresentacao 3"];
+    _pageTitles = @[@"Bem Vindo ao Co.ontacts", @"Prático e Rápido", @"O Contato Direto"];
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
