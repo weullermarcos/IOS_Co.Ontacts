@@ -13,6 +13,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *label_Instruction;
 @property NSUInteger pageIndex;
 @property NSString *titleText;
+@property NSString *contentText;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+
+@property (weak, nonatomic) IBOutlet UILabel *label_Content;
+
 
 @end

@@ -22,6 +22,9 @@
     
     _pageTitles = @[@"Bem Vindo ao Co.ontacts", @"Prático e Rápido", @"O Contato Direto"];
     
+    _pageContents = @[@"Os contatos de seus amigos 1", @"Conteudo 2", @"Conteudo 3"];
+
+    
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     self.pageViewController.dataSource = self;
@@ -84,6 +87,7 @@
     PageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
     
     pageContentViewController.titleText = self.pageTitles[index];
+    pageContentViewController.contentText = self.pageContents[index];
     pageContentViewController.pageIndex = index;
     
   

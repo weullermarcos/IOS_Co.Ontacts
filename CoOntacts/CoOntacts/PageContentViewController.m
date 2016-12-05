@@ -19,6 +19,8 @@
     
     self.label_Instruction.text = self.titleText;
     
+    self.label_Content.text = self.contentText;
+    
     if(self.pageIndex == 2){
         
         self.loginButton.hidden = false;
