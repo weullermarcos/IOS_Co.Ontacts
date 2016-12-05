@@ -11,9 +11,12 @@
 #import "Contato+CoreDataClass.h"
 #import "ContactTableViewCell.h"
 
-@interface InitialTableViewController () <NSFetchedResultsControllerDelegate>
+@interface InitialTableViewController () <NSFetchedResultsControllerDelegate, NSURLSessionDataDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+
+//Propriedade para dados retornados do webservice
+@property (strong, nonatomic) NSMutableData *bytesResposta;
 
 @end
 
@@ -32,14 +35,42 @@
     //Botao para adicionar novo contato
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(Add:)];
     
+    //Instancia para fazer uma nova requisicao
+    _bytesResposta = [NSMutableData new];
+    
     
 }
 
-//Direciona para a tela de novo contato
--(IBAction)Add:(id)sender
-{
-    //Direciona para a proxima tela
-    [self performSegueWithIdentifier:@"segueAddContatct" sender:self];
+// Vai aparecer
+- (void) viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    
+    NSError *erro;
+    
+    if( [self.fetchedResultsController performFetch:&erro] ){
+        
+        //Verifica se não tem contatos cadastrados
+        //se não tiver busca da Web
+        if([[self.fetchedResultsController.sections objectAtIndex:0] numberOfObjects] == 0){
+            
+            [self getOnlineUsers];
+            
+        }
+        else{
+            
+            //Sucesso
+            [self.tableView reloadData];
+        }
+
+    }
+    else{
+        
+        //erro
+        NSLog(@"Erro ao recuperar pessoas");
+        
+    }
     
 }
 
@@ -65,29 +96,75 @@
     
 }
 
-// Vai aparecer
-- (void) viewWillAppear:(BOOL)animated{
+- (void) getOnlineUsers{
+
+    //Requisicao Web
+    NSURLSessionConfiguration *sc =
+    [NSURLSessionConfiguration defaultSessionConfiguration];
     
-    [super viewWillAppear:animated];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:sc
+                                                          delegate:self
+                                                     delegateQueue:nil];
     
-    NSError *erro;
+    NSURLSessionDataTask *task = [session dataTaskWithURL:[NSURL URLWithString:@"http://jsonplaceholder.typicode.com/users"]];
     
-    if( [self.fetchedResultsController performFetch:&erro] ){
-        
-        //Sucesso
-        [self.tableView reloadData];
-        
-    }
-    else{
-        
-        //erro
-        NSLog(@"Erro ao recuperar pessoas");
-        
-    }
+    [task resume];
+    
+    //Fim
     
 }
 
+//Direciona para a tela de novo contato
+-(IBAction)Add:(id)sender
+{
+    //Direciona para a proxima tela
+    [self performSegueWithIdentifier:@"segueAddContatct" sender:self];
+    
+}
 
+//2
+#pragma mark - NSURLSessionDelegate
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
+    
+    [_bytesResposta appendData:data];
+}
+
+
+//3
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error{
+    
+    if (error) {
+        
+        NSLog(@"Erro de conexão: %@", error);
+    }
+    else {
+        NSError *erroJSON;
+        
+        NSArray<NSDictionary *> *posts =
+        [NSJSONSerialization JSONObjectWithData:_bytesResposta
+                                        options:kNilOptions
+                                          error:&erroJSON];
+        
+        if (erroJSON) {
+            
+            NSLog(@"JSON recebido é inválido: %@", erroJSON);
+        }
+        else {
+            
+            NSLog(@"Dados recebidos: %@", posts);
+            
+            for (NSDictionary *post in posts) {
+                
+                //TODO: Salvar dados dos usuarios recebidos.
+                NSLog(@"Post: %@", [post objectForKey:@"title"]);
+            }
+            
+            //recarrega os dados da tabela..
+            [self.tableView reloadData];
+            
+        }
+    }
+}
 
 #pragma mark - Table view data source
 
