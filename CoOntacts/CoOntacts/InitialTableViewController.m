@@ -67,8 +67,11 @@
     }
     else{
         
-        //erro
-        NSLog(@"Erro ao recuperar pessoas");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alerta"
+                                                        message:@"Não foi possível recuperar os seus contatos"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
         
     }
     
@@ -135,6 +138,12 @@
     
     if (error) {
         
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alerta"
+                                                        message:@"Erro de conexão"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        
         NSLog(@"Erro de conexão: %@", error);
     }
     else {
@@ -155,8 +164,9 @@
             
             for (NSDictionary *post in posts) {
                 
-                //TODO: Salvar dados dos usuarios recebidos.
-                NSLog(@"Post: %@", [post objectForKey:@"title"]);
+                //NSLog(@"Usuario: %@", [post objectForKey:@"username"]);
+                [self saveContact:post];
+                
             }
             
             //recarrega os dados da tabela..
@@ -164,6 +174,44 @@
             
         }
     }
+}
+
+//Método para inserir novo contato
+-(void) saveContact: (NSDictionary*) contact{
+
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    NSPersistentContainer *containerPersistencia = delegate.persistentContainer;
+    
+    //Criando contexto
+    NSManagedObjectContext *context = containerPersistencia.viewContext;
+    
+    
+    //Criando um novo objeto do tipo contato para ser inserido no BD
+    Contato *contato = [NSEntityDescription insertNewObjectForEntityForName:@"Contato"
+                                                     inManagedObjectContext:context];
+    
+    [contato setNome:[contact objectForKey:@"username"]];
+    [contato setEmail:[contact objectForKey:@"email"]];
+    [contato setTelefone:[contact objectForKey:@"phone"]];
+    [contato setDescricao:[contact objectForKey:@"name"]];
+    
+    //TODO: salvar Imagem do usuário
+    //[contato setImagem: UIImagePNGRepresentation(contact.userImage.image)];
+    
+    
+    NSError *errorCoreData;
+    
+    if([context save:&errorCoreData]){
+        
+        NSLog(@"Contato cadastrado com sucesso");
+        
+    }
+    else{
+        
+        NSLog(@"Erro ao cadastrar contato");
+    }
+    
 }
 
 #pragma mark - Table view data source

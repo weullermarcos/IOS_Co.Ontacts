@@ -96,8 +96,6 @@
         [message setString:@"O campo Telefone é de preenchimento obrigatório"];
     }
     else{
-    
-        //TODO: Inserir imagem no BD
         
         AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
         
