@@ -196,9 +196,18 @@
     [contato setTelefone:[contact objectForKey:@"phone"]];
     [contato setDescricao:[contact objectForKey:@"name"]];
     
-    //TODO: salvar Imagem do usuário
-    //[contato setImagem: UIImagePNGRepresentation(contact.userImage.image)];
+    NSMutableString *user = [[NSMutableString alloc] initWithString:@"user"];
     
+    int number = arc4random_uniform(5);
+    
+    if(number < 0 || number > 5)
+        number = 0;
+    
+    [user appendString:[NSString stringWithFormat:@"%d", number]];
+    [user appendString:@".png"];
+    
+    [contato setImagem: UIImagePNGRepresentation([UIImage imageNamed:user])];
+    //[contato setImagem: UIImagePNGRepresentation([UIImage imageNamed:@"default_image"])];
     
     NSError *errorCoreData;
     
