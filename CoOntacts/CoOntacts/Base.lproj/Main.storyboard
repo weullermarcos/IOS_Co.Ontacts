@@ -114,6 +114,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="mTz-Zr-Hxq" kind="show" identifier="ContactDetailSegue" id="o3b-tN-iBb"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -253,7 +256,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bav-2t-2Vi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5016.8000000000002" y="1172.5637181409297"/>
+            <point key="canvasLocation" x="5004" y="976"/>
+        </scene>
+        <!--Contact Detail View Controller-->
+        <scene sceneID="HdH-DY-Chu">
+            <objects>
+                <viewController id="mTz-Zr-Hxq" customClass="ContactDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r3p-rb-3Ws"/>
+                        <viewControllerLayoutGuide type="bottom" id="m8O-SD-bLA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="99p-nm-NCS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UGA-mx-u9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5004" y="1687"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="iso-Lq-6j5">

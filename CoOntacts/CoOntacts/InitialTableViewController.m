@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "Contato+CoreDataClass.h"
 #import "ContactTableViewCell.h"
+#import "ContactDetailViewController.h"
 
 @interface InitialTableViewController () <NSFetchedResultsControllerDelegate, NSURLSessionDataDelegate>
 
@@ -207,7 +208,6 @@
     [user appendString:@".png"];
     
     [contato setImagem: UIImagePNGRepresentation([UIImage imageNamed:user])];
-    //[contato setImagem: UIImagePNGRepresentation([UIImage imageNamed:@"default_image"])];
     
     NSError *errorCoreData;
     
@@ -376,15 +376,30 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+    if ([[segue identifier] isEqualToString:@"ContactDetailSegue"])
+    {
+
+        ContactDetailViewController *detailVC = segue.destinationViewController;
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Contato *contact = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        detailVC.contact = contact;
+        
+    }
+    
 }
-*/
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"ContactDetailSegue" sender:self];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
