@@ -2,7 +2,7 @@
 //  Contato+CoreDataProperties.m
 //  CoOntacts
 //
-//  Created by Weuller Marcos on 15/11/16.
+//  Created by Weuller Marcos on 23/12/16.
 //  Copyright © 2016 Weuller. All rights reserved.
 //
 
@@ -16,8 +16,10 @@
 
 @dynamic descricao;
 @dynamic email;
+@dynamic imagem;
+@dynamic latitude;
+@dynamic longitude;
 @dynamic nome;
 @dynamic telefone;
-@dynamic imagem;
 
 @end

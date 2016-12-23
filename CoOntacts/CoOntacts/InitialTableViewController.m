@@ -192,10 +192,32 @@
     Contato *contato = [NSEntityDescription insertNewObjectForEntityForName:@"Contato"
                                                      inManagedObjectContext:context];
     
-    [contato setNome:[contact objectForKey:@"username"]];
+    //Recuperando Endereço
+    NSDictionary *address = [[NSDictionary alloc] init];
+    address = [contact objectForKey:@"address"];
+    
+    //Recuperando geo
+    NSDictionary *geo = [[NSDictionary alloc] init];
+    geo = [address objectForKey:@"geo"];
+    
+    //Recuperando latitude e longitude
+    NSString *latitude = [[NSString alloc]init];
+    NSString *longitude = [[NSString alloc]init];
+    
+    latitude = [geo objectForKey:@"lat"];
+    longitude = [geo objectForKey:@"lng"];
+    
+    
+    [contato setNome:[contact objectForKey:@"name"]];
     [contato setEmail:[contact objectForKey:@"email"]];
     [contato setTelefone:[contact objectForKey:@"phone"]];
     [contato setDescricao:[contact objectForKey:@"name"]];
+    [contato setLatitude:latitude];
+    [contato setLongitude:longitude];
+    
+    //NSLog(@"%@", contato.latitude);
+    //NSLog(@"%@", contato.longitude);
+    
     
     NSMutableString *user = [[NSMutableString alloc] initWithString:@"user"];
     
