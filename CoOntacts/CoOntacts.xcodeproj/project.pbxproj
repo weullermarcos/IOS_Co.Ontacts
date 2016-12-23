@@ -26,6 +26,7 @@
 		D3C709781E0D9EE300877303 /* ContactMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C709771E0D9EE300877303 /* ContactMapViewController.m */; };
 		D3C7097B1E0DA02E00877303 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C7097A1E0DA02E00877303 /* CoreLocation.framework */; };
 		D3C7097D1E0DA03800877303 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C7097C1E0DA03800877303 /* MapKit.framework */; };
+		D3C709801E0DA43200877303 /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C7097F1E0DA43200877303 /* MapPin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,8 @@
 		D3C709771E0D9EE300877303 /* ContactMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactMapViewController.m; sourceTree = "<group>"; };
 		D3C7097A1E0DA02E00877303 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D3C7097C1E0DA03800877303 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D3C7097E1E0DA43200877303 /* MapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPin.h; sourceTree = "<group>"; };
+		D3C7097F1E0DA43200877303 /* MapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPin.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,7 @@
 		57FFE7611D5BEE3700A8F4C3 /* CoOntacts */ = {
 			isa = PBXGroup;
 			children = (
+				D3C709811E0DA43A00877303 /* Models */,
 				D30795301DD8C7C60061DED1 /* TableViewControllers */,
 				D307952F1DD8C7AF0061DED1 /* ViewControllers */,
 				D3E533141DBEAFB80018669C /* Entities */,
@@ -165,6 +169,15 @@
 				D3C7097A1E0DA02E00877303 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3C709811E0DA43A00877303 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D3C7097E1E0DA43200877303 /* MapPin.h */,
+				D3C7097F1E0DA43200877303 /* MapPin.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		D3E533141DBEAFB80018669C /* Entities */ = {
@@ -260,6 +273,7 @@
 				D31E01201E05878C00745324 /* ContactDetailViewController.m in Sources */,
 				0B34DBD91D89B65200EBD976 /* InitialTableViewController.m in Sources */,
 				57FFE7671D5BEE3700A8F4C3 /* AppDelegate.m in Sources */,
+				D3C709801E0DA43200877303 /* MapPin.m in Sources */,
 				D3C709741E0D4C9800877303 /* Contato+CoreDataClass.m in Sources */,
 				D3C709751E0D4C9800877303 /* Contato+CoreDataProperties.m in Sources */,
 				57FFE7641D5BEE3700A8F4C3 /* main.m in Sources */,

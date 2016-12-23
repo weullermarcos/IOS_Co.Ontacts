@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Contato+CoreDataClass.h"
+
 @import MapKit;
 @import CoreLocation;
 
 @interface ContactMapViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet MKMapView *contactMap;
+@property(nonatomic) Contato *contact;
 
+@property (weak, nonatomic) IBOutlet MKMapView *contactMap;
 
 @end
