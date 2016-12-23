@@ -48,5 +48,9 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Mensagem para permitir usar sempre</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Mensagem quando está em uso</string>
 </dict>
 </plist>

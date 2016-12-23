@@ -280,6 +280,7 @@
                                 <state key="normal" title="Ver localização no mapa"/>
                                 <connections>
                                     <action selector="showContactInMap:" destination="mTz-Zr-Hxq" eventType="touchUpInside" id="VAW-ul-9fW"/>
+                                    <segue destination="e5B-cK-UyL" kind="show" id="u7m-fQ-g2X"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XZ6-Y6-G4u">
@@ -336,6 +337,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UGA-mx-u9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5004" y="1686.2068965517242"/>
+        </scene>
+        <!--Contact Map View Controller-->
+        <scene sceneID="V8u-oB-KcI">
+            <objects>
+                <viewController id="e5B-cK-UyL" customClass="ContactMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="acc-aI-aU0"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Ba-Ys-O77"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="29I-eG-ex4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="n3u-y2-gS6"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n3u-y2-gS6" firstAttribute="top" secondItem="acc-aI-aU0" secondAttribute="bottom" id="37M-0d-5xx"/>
+                            <constraint firstAttribute="trailing" secondItem="n3u-y2-gS6" secondAttribute="trailing" id="7Yc-Aj-jS3"/>
+                            <constraint firstItem="n3u-y2-gS6" firstAttribute="leading" secondItem="29I-eG-ex4" secondAttribute="leading" id="dRN-VO-tBP"/>
+                            <constraint firstItem="4Ba-Ys-O77" firstAttribute="top" secondItem="n3u-y2-gS6" secondAttribute="bottom" id="vBy-6o-ICN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contactMap" destination="n3u-y2-gS6" id="65E-uO-pjX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qw5-F0-rzh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5856.8000000000002" y="1685.3073463268368"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="iso-Lq-6j5">
