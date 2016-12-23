@@ -19,13 +19,26 @@
     // Do any additional setup after loading the view.
     
     
-    self.title = self.contact.nome;
+    self.title = @"Contato";
+    
+    [self.contactName setText:self.contact.nome];
+    [self.contactPhone setText:self.contact.telefone];
+    [self.contactEmail setText:self.contact.email];
+    [self.contactDescriptioon setText:self.contact.descricao];
+
+
+    UIImage *image = [UIImage imageWithData:self.contact.imagem];
+    
+    //Seta a imagem recuperada
+    [self.contactImage setImage:image];
+    
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)showContactInMap:(id)sender {
+    
+    
+    
 }
 
 /*
@@ -37,5 +50,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 
 @end

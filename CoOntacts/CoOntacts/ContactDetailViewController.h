@@ -13,4 +13,18 @@
 
 @property(nonatomic) Contato *contact;
 
+@property (weak, nonatomic) IBOutlet UIImageView *contactImage;
+
+@property (weak, nonatomic) IBOutlet UITextField *contactName;
+
+@property (weak, nonatomic) IBOutlet UITextField *contactPhone;
+
+@property (weak, nonatomic) IBOutlet UITextField *contactEmail;
+
+@property (weak, nonatomic) IBOutlet UITextField *contactDescriptioon;
+
+
+- (IBAction)showContactInMap:(id)sender;
+
+
 @end

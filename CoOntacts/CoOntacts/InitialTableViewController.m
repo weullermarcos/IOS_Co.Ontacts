@@ -231,7 +231,7 @@
     [contato setNome:[contact objectForKey:@"name"]];
     [contato setEmail:[contact objectForKey:@"email"]];
     [contato setTelefone:[contact objectForKey:@"phone"]];
-    [contato setDescricao:[contact objectForKey:@"name"]];
+    [contato setDescricao:[contact objectForKey:@"username"]];
     [contato setLatitude:latitude];
     [contato setLongitude:longitude];
     
