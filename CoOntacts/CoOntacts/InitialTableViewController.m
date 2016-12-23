@@ -68,11 +68,21 @@
     }
     else{
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alerta"
-                                                        message:@"Não foi possível recuperar os seus contatos"
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
+        
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:@"Alerta"
+                                      message:@"Não foi possível recuperar os seus contatos"
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {}];
+        [alert addAction:ok];
         
     }
     
@@ -139,11 +149,21 @@
     
     if (error) {
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alerta"
-                                                        message:@"Erro de conexão"
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
+        
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:@"Alerta"
+                                      message:@"Erro de conexão"
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {}];
+        [alert addAction:ok];
         
         NSLog(@"Erro de conexão: %@", error);
     }

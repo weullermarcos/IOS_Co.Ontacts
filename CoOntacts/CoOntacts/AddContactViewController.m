@@ -135,14 +135,21 @@
         }
         
     }
-
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alerta"
-                                                    message:message
-                                                   delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"Alerta"
+                                  message:message
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {}];
+    [alert addAction:ok];
     
     //retorna para a tela anterior caso tenha sido inserido com sucesso
     if(sucess)

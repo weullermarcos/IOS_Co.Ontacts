@@ -72,13 +72,21 @@
     }
     else{
         
+
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:@"Alerta"
+                                      message:@"Os dados de acesso estão incorretos utilize login: weuller senha: 123"
+                                      preferredStyle:UIAlertControllerStyleAlert];
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alerta"
-                                                        message:@"Os dados de acesso estão incorretos utilize login: weuller senha: 123"
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {}];
+        [alert addAction:ok];
         
     }
     
