@@ -307,26 +307,22 @@
                         <constraints>
                             <constraint firstItem="R2p-Ye-Ogw" firstAttribute="leading" secondItem="99p-nm-NCS" secondAttribute="leadingMargin" id="4bG-3d-FOd"/>
                             <constraint firstItem="its-gI-ll1" firstAttribute="trailing" secondItem="99p-nm-NCS" secondAttribute="trailingMargin" id="4iN-73-k1C"/>
-                            <constraint firstItem="k92-2t-GVt" firstAttribute="top" secondItem="its-gI-ll1" secondAttribute="bottom" constant="33" id="8zL-If-aXX"/>
                             <constraint firstItem="k92-2t-GVt" firstAttribute="leading" secondItem="99p-nm-NCS" secondAttribute="leadingMargin" id="Blb-xG-dbS"/>
-                            <constraint firstItem="its-gI-ll1" firstAttribute="top" secondItem="4nV-bi-gKp" secondAttribute="bottom" constant="33" id="FQF-0e-sRL"/>
                             <constraint firstItem="XZ6-Y6-G4u" firstAttribute="leading" secondItem="99p-nm-NCS" secondAttribute="leadingMargin" id="HvQ-0k-yaa"/>
                             <constraint firstItem="4nV-bi-gKp" firstAttribute="leading" secondItem="99p-nm-NCS" secondAttribute="leadingMargin" id="ItQ-3W-TZd"/>
-                            <constraint firstItem="its-gI-ll1" firstAttribute="top" secondItem="4nV-bi-gKp" secondAttribute="bottom" constant="33" id="JEO-OH-3o9"/>
-                            <constraint firstItem="XZ6-Y6-G4u" firstAttribute="top" secondItem="9F5-We-0Rg" secondAttribute="bottom" constant="36" id="JfT-Ll-e7J"/>
+                            <constraint firstItem="its-gI-ll1" firstAttribute="top" secondItem="4nV-bi-gKp" secondAttribute="bottom" constant="24" id="JEO-OH-3o9"/>
                             <constraint firstItem="4nV-bi-gKp" firstAttribute="trailing" secondItem="99p-nm-NCS" secondAttribute="trailingMargin" id="ORf-Xt-LVE"/>
                             <constraint firstItem="XZ6-Y6-G4u" firstAttribute="trailing" secondItem="99p-nm-NCS" secondAttribute="trailingMargin" id="PQy-Ui-tSR"/>
                             <constraint firstItem="k92-2t-GVt" firstAttribute="trailing" secondItem="99p-nm-NCS" secondAttribute="trailingMargin" id="Pkw-PS-Anp"/>
                             <constraint firstItem="m8O-SD-bLA" firstAttribute="top" secondItem="R2p-Ye-Ogw" secondAttribute="bottom" constant="20" id="RqQ-AR-Wf7"/>
-                            <constraint firstItem="4nV-bi-gKp" firstAttribute="top" secondItem="XZ6-Y6-G4u" secondAttribute="bottom" constant="33" id="S4W-HP-Z7m"/>
-                            <constraint firstItem="XZ6-Y6-G4u" firstAttribute="top" secondItem="9F5-We-0Rg" secondAttribute="bottom" constant="36" id="TvS-AM-6iM"/>
-                            <constraint firstItem="k92-2t-GVt" firstAttribute="top" secondItem="its-gI-ll1" secondAttribute="bottom" constant="33" id="Vgo-9U-dmI"/>
+                            <constraint firstItem="4nV-bi-gKp" firstAttribute="top" secondItem="XZ6-Y6-G4u" secondAttribute="bottom" constant="24" id="S4W-HP-Z7m"/>
+                            <constraint firstItem="XZ6-Y6-G4u" firstAttribute="top" secondItem="9F5-We-0Rg" secondAttribute="bottom" constant="24" id="TvS-AM-6iM"/>
+                            <constraint firstItem="k92-2t-GVt" firstAttribute="top" secondItem="its-gI-ll1" secondAttribute="bottom" constant="24" id="Vgo-9U-dmI"/>
                             <constraint firstAttribute="trailing" secondItem="9F5-We-0Rg" secondAttribute="trailing" id="Xgl-jZ-wYM"/>
                             <constraint firstItem="its-gI-ll1" firstAttribute="leading" secondItem="99p-nm-NCS" secondAttribute="leadingMargin" id="brY-9G-Yhj"/>
                             <constraint firstItem="R2p-Ye-Ogw" firstAttribute="trailing" secondItem="99p-nm-NCS" secondAttribute="trailingMargin" id="kjc-sn-ohq"/>
                             <constraint firstItem="9F5-We-0Rg" firstAttribute="leading" secondItem="99p-nm-NCS" secondAttribute="leading" id="mEI-bj-vvB"/>
                             <constraint firstItem="9F5-We-0Rg" firstAttribute="top" secondItem="r3p-rb-3Ws" secondAttribute="bottom" id="n1X-na-I1f"/>
-                            <constraint firstItem="4nV-bi-gKp" firstAttribute="top" secondItem="XZ6-Y6-G4u" secondAttribute="bottom" constant="33" id="ugc-IV-7Fa"/>
                         </constraints>
                     </view>
                     <connections>
