@@ -17,6 +17,7 @@
 @implementation SecondViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
     [self applyBackgroudColor];
@@ -24,6 +25,20 @@
     [self.txtLogin setDelegate:self];
     [self.txtPassword setDelegate:self];
     
+}
+
+-(void) viewDidAppear:(BOOL)animated{
+
+    [super viewDidAppear:animated];
+    
+    [self.loginButtonConstraint setConstant:0];
+    
+    __weak typeof(self) weakSelf = self;
+    
+    [UIView animateWithDuration:1 animations:^{
+        [weakSelf.view layoutIfNeeded];
+    }];
+
 }
 
 

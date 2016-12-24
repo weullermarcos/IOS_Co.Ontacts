@@ -66,20 +66,22 @@
                         <constraints>
                             <constraint firstItem="bwI-eN-LCl" firstAttribute="leading" secondItem="drR-rG-IyC" secondAttribute="leading" constant="20" id="0Q0-ys-xWl"/>
                             <constraint firstAttribute="trailing" secondItem="LTk-Qj-5Lr" secondAttribute="trailing" constant="20" id="5Ig-Nx-4bK"/>
+                            <constraint firstItem="bI8-JH-iM6" firstAttribute="centerY" secondItem="drR-rG-IyC" secondAttribute="centerY" constant="-500" id="IFd-KT-jGi"/>
                             <constraint firstItem="bI8-JH-iM6" firstAttribute="centerX" secondItem="drR-rG-IyC" secondAttribute="centerX" id="INC-cu-Qwn"/>
                             <constraint firstItem="bwI-eN-LCl" firstAttribute="top" secondItem="8I2-c8-YFp" secondAttribute="bottom" constant="59" id="MuQ-lp-2TQ"/>
                             <constraint firstAttribute="trailing" secondItem="Re5-hN-5G5" secondAttribute="trailing" constant="20" id="OtN-bh-zX5"/>
                             <constraint firstItem="Re5-hN-5G5" firstAttribute="top" secondItem="LTk-Qj-5Lr" secondAttribute="bottom" constant="50" id="SHX-er-AxY"/>
                             <constraint firstItem="LTk-Qj-5Lr" firstAttribute="leading" secondItem="8I2-c8-YFp" secondAttribute="trailing" constant="8" id="Uss-RO-kJF"/>
-                            <constraint firstItem="bI8-JH-iM6" firstAttribute="top" secondItem="Re5-hN-5G5" secondAttribute="bottom" constant="50" id="VN3-Oi-rjC"/>
                             <constraint firstItem="Re5-hN-5G5" firstAttribute="leading" secondItem="bwI-eN-LCl" secondAttribute="trailing" constant="8" id="W4i-jB-BXc"/>
-                            <constraint firstItem="8I2-c8-YFp" firstAttribute="top" secondItem="O81-46-pQv" secondAttribute="bottom" constant="100" id="hK9-En-ft4"/>
+                            <constraint firstItem="bI8-JH-iM6" firstAttribute="top" secondItem="Re5-hN-5G5" secondAttribute="bottom" constant="49" id="gtq-6s-SGg"/>
                             <constraint firstItem="8I2-c8-YFp" firstAttribute="leading" secondItem="drR-rG-IyC" secondAttribute="leading" constant="20" id="jLF-wx-3qZ"/>
-                            <constraint firstItem="LTk-Qj-5Lr" firstAttribute="top" secondItem="O81-46-pQv" secondAttribute="bottom" constant="96" id="ukD-Ce-fr1"/>
+                            <constraint firstItem="bI8-JH-iM6" firstAttribute="top" secondItem="bwI-eN-LCl" secondAttribute="bottom" constant="54" id="lgG-6n-tXH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="pVj-qW-82c"/>
                     <connections>
+                        <outlet property="loginButton" destination="bI8-JH-iM6" id="Nqp-4r-Jed"/>
+                        <outlet property="loginButtonConstraint" destination="IFd-KT-jGi" id="J58-Zu-5fY"/>
                         <outlet property="txtLogin" destination="LTk-Qj-5Lr" id="ggt-Sn-xL4"/>
                         <outlet property="txtPassword" destination="Re5-hN-5G5" id="Vus-0X-xeH"/>
                         <segue destination="zPu-aN-1qL" kind="show" identifier="segueLoginSuccess" id="1LP-mW-Hxs"/>

@@ -14,6 +14,10 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;
 
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *loginButtonConstraint;
+
 - (IBAction)LoginAction:(id)sender;
 
 
