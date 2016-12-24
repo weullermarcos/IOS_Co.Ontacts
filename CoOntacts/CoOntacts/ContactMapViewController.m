@@ -91,6 +91,16 @@
         [self.contactMap addAnnotation:pin];
         pin.coordinate = contactCoordinate;
         
+        
+        MKCoordinateRegion region;
+//        MKCoordinateSpan span;
+        
+//        span.latitudeDelta = 0.010;
+//        span.longitudeDelta = 0.010;
+        
+//        region.span = span;
+        region.center = contactCoordinate;
+        [self.contactMap setRegion:region animated:YES];
     
     }
 }
