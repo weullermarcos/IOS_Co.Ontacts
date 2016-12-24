@@ -148,12 +148,14 @@
                          actionWithTitle:@"OK"
                          style:UIAlertActionStyleDefault
                          handler:^(UIAlertAction * action)
-                         {}];
+                         {
+                             //retorna para a tela anterior caso tenha sido inserido com sucesso
+                             if(sucess)
+                                 [self.navigationController popViewControllerAnimated:YES];
+                         }];
+    
     [alert addAction:ok];
     
-    //retorna para a tela anterior caso tenha sido inserido com sucesso
-    if(sucess)
-        [self.navigationController popViewControllerAnimated:YES];
     
 }
 
