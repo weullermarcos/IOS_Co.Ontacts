@@ -49,15 +49,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)LoginAction:(id)sender {
     
@@ -92,51 +83,24 @@
     
 }
 
-- (void) insereDadosCarga{
+
+- (IBAction)TouchDown:(id)sender{
     
-    
-    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-    
-    NSPersistentContainer *containerPersistencia = delegate.persistentContainer;
-    
-    //Criando contexto
-    NSManagedObjectContext *context = containerPersistencia.viewContext;
-    
-    for (int i=0; i < 5; i++) {
-        
-        //Criando um novo objeto do tipo contato para ser inserido no BD
-        Contato *contato = [NSEntityDescription insertNewObjectForEntityForName:@"Contato"
-                                                         inManagedObjectContext:context];
-        
-        NSMutableString  *nome = [[NSMutableString alloc] init];
-        
-        [nome appendString:@"Contato "];
-        [nome appendString: [NSString stringWithFormat:@"%i", i]];
-        
-        
-        [contato setNome:nome];
-        [contato setEmail:@"Usuario@empresa.com"];
-        [contato setTelefone:@"3333-3554"];
-        [contato setDescricao:@"Descricao x"];
-        //[contato setReceberNotificacoes:true];
-        
-        
-        NSError *errorCoreData;
-        
-        if([context save:&errorCoreData]){
-            
-            NSLog(@"Dados salvos com sucesso");
-            
-        }
-        else{
-            
-            NSLog(@"Erro ao salvar dados");
-            
-        }
-        
-    }
+    [_txtLogin resignFirstResponder];
+    [_txtPassword resignFirstResponder];
     
 }
+
+
+- (IBAction)BackKeyboard:(id)sender {
+    
+    [sender resignFirstResponder];
+    
+}
+
+
+
+
 
 
 
