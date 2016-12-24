@@ -280,7 +280,7 @@
                                 <state key="normal" title="Ver localização no mapa"/>
                                 <connections>
                                     <action selector="showContactInMap:" destination="mTz-Zr-Hxq" eventType="touchUpInside" id="VAW-ul-9fW"/>
-                                    <segue destination="e5B-cK-UyL" kind="show" id="u7m-fQ-g2X"/>
+                                    <segue destination="e5B-cK-UyL" kind="show" identifier="ContactMapSegue" id="u7m-fQ-g2X"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XZ6-Y6-G4u">

@@ -7,6 +7,8 @@
 //
 
 #import "ContactMapViewController.h"
+#import "MapPin.h"
+
 @import MapKit;
 @import CoreLocation;
 
@@ -17,11 +19,11 @@
 @implementation ContactMapViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
 
-    
     [self setTitle:@"Mapa"];
-    
+
 }
 
 
@@ -29,7 +31,35 @@
 
     [super viewDidAppear:animated];
     
-
+    
+    double latitude = [self.contact.latitude doubleValue];
+    double longitude = [self.contact.longitude doubleValue];
+    
+    
+    //Configura coordenadas do contato
+    CLLocationCoordinate2D contactCoordinate;
+    contactCoordinate.latitude = latitude;
+    contactCoordinate.longitude = longitude;
+    
+    
+//    MKCoordinateSpan zoom;
+//    zoom.latitudeDelta = .1f; //the zoom level in degrees
+//    zoom.longitudeDelta = .1f;//the zoom level in degrees
+    
+    
+//    MKCoordinateRegion myRegion;
+//    myRegion.center = contactCoordinate;
+//    myRegion.span = zoom;
+    
+    //Criando Pin
+    MapPin *pin = [[MapPin alloc] init];
+    pin.subtitle = @"";
+    pin.title = self.contact.nome;
+    
+    [self.contactMap addAnnotation:pin];
+    pin.coordinate = contactCoordinate;
+    
+    
 }
 
 
