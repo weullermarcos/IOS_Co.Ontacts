@@ -235,9 +235,6 @@
     [contato setLatitude:latitude];
     [contato setLongitude:longitude];
     
-    //NSLog(@"%@", contato.latitude);
-    //NSLog(@"%@", contato.longitude);
-    
     
     NSMutableString *user = [[NSMutableString alloc] initWithString:@"user"];
     

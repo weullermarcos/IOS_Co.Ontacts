@@ -24,7 +24,4 @@
 @property (weak, nonatomic) IBOutlet UITextField *contactDescriptioon;
 
 
-- (IBAction)showContactInMap:(id)sender;
-
-
 @end

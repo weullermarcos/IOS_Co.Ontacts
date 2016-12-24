@@ -279,7 +279,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2p-Ye-Ogw">
                                 <state key="normal" title="Ver localização no mapa"/>
                                 <connections>
-                                    <action selector="showContactInMap:" destination="mTz-Zr-Hxq" eventType="touchUpInside" id="VAW-ul-9fW"/>
                                     <segue destination="e5B-cK-UyL" kind="show" identifier="ContactMapSegue" id="u7m-fQ-g2X"/>
                                 </connections>
                             </button>

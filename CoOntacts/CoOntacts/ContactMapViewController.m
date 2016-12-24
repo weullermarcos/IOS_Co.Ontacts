@@ -12,7 +12,9 @@
 @import MapKit;
 @import CoreLocation;
 
-@interface ContactMapViewController ()
+@interface ContactMapViewController () <CLLocationManagerDelegate>
+
+@property (strong,nonatomic) CLLocationManager* locationManager;
 
 @end
 
@@ -23,6 +25,13 @@
     [super viewDidLoad];
 
     [self setTitle:@"Mapa"];
+    
+    _locationManager = [[CLLocationManager alloc] init];
+    
+    [_locationManager setDelegate:self];
+    
+    //Mostra a localizacao do usuario
+    [self.contactMap setShowsUserLocation:YES];
 
 }
 
@@ -32,34 +41,58 @@
     [super viewDidAppear:animated];
     
     
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    
+    //verifica se nao esta autorizado oara perguntar ao usuario se ele autoriza
+    if(status == kCLAuthorizationStatusNotDetermined){
+        
+        //Autorizacao para quando estiver em uso
+        [_locationManager requestWhenInUseAuthorization];
+        
+        //autorizacao para sempre
+        [_locationManager requestAlwaysAuthorization];
+        
+    }
+    
     double latitude = [self.contact.latitude doubleValue];
     double longitude = [self.contact.longitude doubleValue];
     
-    
-    //Configura coordenadas do contato
-    CLLocationCoordinate2D contactCoordinate;
-    contactCoordinate.latitude = latitude;
-    contactCoordinate.longitude = longitude;
+    if(latitude == 0 || longitude == 0){
     
     
-//    MKCoordinateSpan zoom;
-//    zoom.latitudeDelta = .1f; //the zoom level in degrees
-//    zoom.longitudeDelta = .1f;//the zoom level in degrees
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:@"Alerta"
+                                      message:@"O contato selecionado não possui dados corretos de localização"
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {}];
+        [alert addAction:ok];
     
+    }
+    else{
+        
+        //Configura coordenadas do contato
+        CLLocationCoordinate2D contactCoordinate;
+        contactCoordinate.latitude = latitude;
+        contactCoordinate.longitude = longitude;
+        
+        //Criando Pin
+        MapPin *pin = [[MapPin alloc] init];
+        pin.subtitle = @"";
+        pin.title = self.contact.nome;
+        
+        [self.contactMap addAnnotation:pin];
+        pin.coordinate = contactCoordinate;
+        
     
-//    MKCoordinateRegion myRegion;
-//    myRegion.center = contactCoordinate;
-//    myRegion.span = zoom;
-    
-    //Criando Pin
-    MapPin *pin = [[MapPin alloc] init];
-    pin.subtitle = @"";
-    pin.title = self.contact.nome;
-    
-    [self.contactMap addAnnotation:pin];
-    pin.coordinate = contactCoordinate;
-    
-    
+    }
 }
 
 
