@@ -23,8 +23,12 @@
 
 
 - (IBAction)uploadImage:(id)sender;
+
 - (IBAction)cancel:(id)sender;
+
 - (IBAction)createUser:(id)sender;
+
+- (IBAction)BackKeyboard:(id)sender;
 
 
 @end
