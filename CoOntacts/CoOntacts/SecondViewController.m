@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "Contato+CoreDataClass.h"
 
-@interface SecondViewController ()
+@interface SecondViewController () <UITextFieldDelegate>
 
 @end
 
@@ -20,6 +20,9 @@
     [super viewDidLoad];
     
     [self applyBackgroudColor];
+    
+    [self.txtLogin setDelegate:self];
+    [self.txtPassword setDelegate:self];
     
 }
 
@@ -93,15 +96,21 @@
 }
 
 
-- (IBAction)BackKeyboard:(id)sender {
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    [sender resignFirstResponder];
+    if (textField == self.txtLogin) {
+        
+        [self.txtPassword becomeFirstResponder]; //isso faz o teclado aparecer, com foco no campo de senha
+    }
     
+    if (textField == self.txtPassword) {
+        
+        [textField resignFirstResponder]; //isso faz o teclado se esconder
+    }
+    
+    return YES;
 }
-
-
-
-
 
 
 

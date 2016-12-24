@@ -16,7 +16,6 @@
 
 - (IBAction)LoginAction:(id)sender;
 
-- (IBAction)BackKeyboard:(id)sender;
 
 - (IBAction)TouchDown:(id)sender;
 

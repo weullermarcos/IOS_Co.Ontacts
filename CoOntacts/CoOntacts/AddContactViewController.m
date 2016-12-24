@@ -11,7 +11,7 @@
 #import "Contato+CoreDataClass.h"
 
 
-@interface AddContactViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface AddContactViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
 
 @end
 
@@ -27,12 +27,39 @@
     
     [self.userImage addGestureRecognizer:tap];
     
+    [self.name setDelegate:self];
+    [self.phone setDelegate:self];
+    [self.email setDelegate:self];
+    [self.contactDescription setDelegate:self];
+    
 }
 
-//Recua o teclado
-- (IBAction)BackKeyboard:(id)sender {
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    [sender resignFirstResponder];
+    
+    if (textField == self.name) {
+        
+        [self.phone becomeFirstResponder];
+    }
+    
+    if (textField == self.phone) {
+        
+        [self.email becomeFirstResponder];
+    }
+    
+    if (textField == self.email) {
+        
+        [self.contactDescription becomeFirstResponder];
+    }
+    
+    if (textField == self.contactDescription) {
+        
+        [textField resignFirstResponder]; //isso faz o teclado se esconder
+    }
+    
+    return YES;
 }
 
 
