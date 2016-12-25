@@ -27,7 +27,7 @@
 		D3C7097B1E0DA02E00877303 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C7097A1E0DA02E00877303 /* CoreLocation.framework */; };
 		D3C7097D1E0DA03800877303 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C7097C1E0DA03800877303 /* MapKit.framework */; };
 		D3C709801E0DA43200877303 /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C7097F1E0DA43200877303 /* MapPin.m */; };
-		D3CB44A81E102A6000C76A56 /* OtherPeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CB44A71E102A6000C76A56 /* OtherPeopleViewController.m */; };
+		D3CB44AB1E102C7D00C76A56 /* OtherPeopleCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CB44AA1E102C7D00C76A56 /* OtherPeopleCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,8 +65,8 @@
 		D3C7097C1E0DA03800877303 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D3C7097E1E0DA43200877303 /* MapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPin.h; sourceTree = "<group>"; };
 		D3C7097F1E0DA43200877303 /* MapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPin.m; sourceTree = "<group>"; };
-		D3CB44A61E102A6000C76A56 /* OtherPeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherPeopleViewController.h; sourceTree = "<group>"; };
-		D3CB44A71E102A6000C76A56 /* OtherPeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherPeopleViewController.m; sourceTree = "<group>"; };
+		D3CB44A91E102C7D00C76A56 /* OtherPeopleCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherPeopleCollectionViewController.h; sourceTree = "<group>"; };
+		D3CB44AA1E102C7D00C76A56 /* OtherPeopleCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherPeopleCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,8 +142,8 @@
 				D31E011F1E05878C00745324 /* ContactDetailViewController.m */,
 				D3C709761E0D9EE300877303 /* ContactMapViewController.h */,
 				D3C709771E0D9EE300877303 /* ContactMapViewController.m */,
-				D3CB44A61E102A6000C76A56 /* OtherPeopleViewController.h */,
-				D3CB44A71E102A6000C76A56 /* OtherPeopleViewController.m */,
+				D3CB44A91E102C7D00C76A56 /* OtherPeopleCollectionViewController.h */,
+				D3CB44AA1E102C7D00C76A56 /* OtherPeopleCollectionViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -270,7 +270,7 @@
 			files = (
 				577B56071D5C034D0042E5D3 /* SecondViewController.m in Sources */,
 				57FFE7701D5BEE3700A8F4C3 /* CoOntacts.xcdatamodeld in Sources */,
-				D3CB44A81E102A6000C76A56 /* OtherPeopleViewController.m in Sources */,
+				D3CB44AB1E102C7D00C76A56 /* OtherPeopleCollectionViewController.m in Sources */,
 				D374E1461DDB88600062E5A8 /* ContactTableViewCell.m in Sources */,
 				0B34DBD61D89A8B900EBD976 /* PageContentViewController.m in Sources */,
 				D3C709781E0D9EE300877303 /* ContactMapViewController.m in Sources */,

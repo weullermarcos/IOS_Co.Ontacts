@@ -1,5 +1,5 @@
 //
-//  OtherPeopleViewController.h
+//  OtherPeopleCollectionViewController.h
 //  CoOntacts
 //
 //  Created by Weuller Marcos on 25/12/16.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OtherPeopleViewController : UIViewController
+@interface OtherPeopleCollectionViewController : UICollectionViewController
+
+
 
 @end
