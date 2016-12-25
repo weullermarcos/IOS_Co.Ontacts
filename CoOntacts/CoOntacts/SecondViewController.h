@@ -20,6 +20,7 @@
 
 - (IBAction)LoginAction:(id)sender;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewOthersPeopleConstraint;
 
 - (IBAction)TouchDown:(id)sender;
 

@@ -61,11 +61,18 @@
                                     <action selector="LoginAction:" destination="WMP-kp-FSB" eventType="touchUpInside" id="F0A-Nw-hJp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuG-GH-C1B">
+                                <state key="normal" title="Conheça outras pessoas que usam Co.Ontacts"/>
+                                <connections>
+                                    <segue destination="cPd-eK-W7V" kind="show" id="FJC-IR-s7m"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bwI-eN-LCl" firstAttribute="leading" secondItem="drR-rG-IyC" secondAttribute="leading" constant="20" id="0Q0-ys-xWl"/>
                             <constraint firstAttribute="trailing" secondItem="LTk-Qj-5Lr" secondAttribute="trailing" constant="20" id="5Ig-Nx-4bK"/>
+                            <constraint firstItem="fuG-GH-C1B" firstAttribute="centerX" secondItem="drR-rG-IyC" secondAttribute="centerX" constant="-500" id="B3I-wO-DUI"/>
                             <constraint firstItem="bI8-JH-iM6" firstAttribute="centerY" secondItem="drR-rG-IyC" secondAttribute="centerY" constant="-500" id="IFd-KT-jGi"/>
                             <constraint firstItem="bI8-JH-iM6" firstAttribute="centerX" secondItem="drR-rG-IyC" secondAttribute="centerX" id="INC-cu-Qwn"/>
                             <constraint firstItem="bwI-eN-LCl" firstAttribute="top" secondItem="8I2-c8-YFp" secondAttribute="bottom" constant="59" id="MuQ-lp-2TQ"/>
@@ -76,6 +83,7 @@
                             <constraint firstItem="bI8-JH-iM6" firstAttribute="top" secondItem="Re5-hN-5G5" secondAttribute="bottom" constant="49" id="gtq-6s-SGg"/>
                             <constraint firstItem="8I2-c8-YFp" firstAttribute="leading" secondItem="drR-rG-IyC" secondAttribute="leading" constant="20" id="jLF-wx-3qZ"/>
                             <constraint firstItem="bI8-JH-iM6" firstAttribute="top" secondItem="bwI-eN-LCl" secondAttribute="bottom" constant="54" id="lgG-6n-tXH"/>
+                            <constraint firstItem="Y0A-G6-vGz" firstAttribute="top" secondItem="fuG-GH-C1B" secondAttribute="bottom" constant="80" id="qwz-eU-Ynx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="pVj-qW-82c"/>
@@ -84,12 +92,13 @@
                         <outlet property="loginButtonConstraint" destination="IFd-KT-jGi" id="J58-Zu-5fY"/>
                         <outlet property="txtLogin" destination="LTk-Qj-5Lr" id="ggt-Sn-xL4"/>
                         <outlet property="txtPassword" destination="Re5-hN-5G5" id="Vus-0X-xeH"/>
+                        <outlet property="viewOthersPeopleConstraint" destination="B3I-wO-DUI" id="6Bx-rD-hVs"/>
                         <segue destination="zPu-aN-1qL" kind="show" identifier="segueLoginSuccess" id="1LP-mW-Hxs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Si-M5-VDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3412" y="1175"/>
+            <point key="canvasLocation" x="3412" y="1174.3628185907048"/>
         </scene>
         <!--Initial Table View Controller-->
         <scene sceneID="IWZ-hH-u7g">
@@ -259,6 +268,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bav-2t-2Vi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5004" y="976"/>
+        </scene>
+        <!--Other People View Controller-->
+        <scene sceneID="ZDh-gz-y2e">
+            <objects>
+                <viewController id="cPd-eK-W7V" customClass="OtherPeopleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Sh-jg-mnU"/>
+                        <viewControllerLayoutGuide type="bottom" id="dAX-8d-Wmu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qCC-hH-qJJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rxQ-IY-s24" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3412" y="1907"/>
         </scene>
         <!--Contact Detail View Controller-->
         <scene sceneID="HdH-DY-Chu">

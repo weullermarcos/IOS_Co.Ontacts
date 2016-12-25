@@ -39,6 +39,15 @@
         [weakSelf.view layoutIfNeeded];
     }];
 
+    
+    [self.viewOthersPeopleConstraint setConstant:0];
+    
+    __weak typeof(self) weakSelf2 = self;
+    
+    [UIView animateWithDuration:1 animations:^{
+        [weakSelf2.view layoutIfNeeded];
+    }];
+    
 }
 
 
