@@ -12,6 +12,8 @@
 @interface OtherPeopleCollectionViewController (){
 
     NSArray *photos; //Criando array para guardar as fotos dos usuários
+    
+    NSArray *names;
 
 }
 
@@ -31,9 +33,18 @@ static NSString * const reuseIdentifier = @"ContactCell";
     
     // Initialize array
     photos = [NSArray arrayWithObjects:
-              @"user0.png", @"user1.png", @"user2.png", @"user3.png", @"user4.png", @"user5.png",
-              @"user0.png", @"user1.png", @"user2.png", @"user3.png", @"user4.png", @"user5.png",
-              @"user0.png", @"user1.png", @"user2.png", @"user3.png", @"user4.png", @"user5.png",
+              @"user0", @"user1", @"user2", @"user3", @"user4", @"user5",
+              @"user6", @"user7", @"user8", @"user9", @"user10", @"user11",
+              @"user12", @"user13", @"user14", @"user15", @"user16", @"user17",
+              @"user18",@"user19",@"user20",
+              nil];
+    
+    // Initialize array
+    names = [NSArray arrayWithObjects:
+              @"Maria", @"João", @"Pedro", @"Tiago", @"Joana", @"Alice",
+              @"Talita", @"Paula", @"Muhamed", @"Otávio", @"Flávia", @"Lucas",
+              @"Augusto", @"Stevan", @"Ailton", @"Tião", @"Marcelo", @"Iona",
+              @"Afonso",@"Amanda",@"Tadeu",
               nil];
     
 }
@@ -56,31 +67,16 @@ static NSString * const reuseIdentifier = @"ContactCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
-//    static NSString *identifier = @"Cell";
-//    
-//    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-//    
-//    UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:100];
-//    recipeImageView.image = [UIImage imageNamed:[photos objectAtIndex:indexPath.row]];
-    
-    
     
     ContactCollectionViewCell *cell = (ContactCollectionViewCell*) [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-//    NSString * imageName = [NSString stringWithFormat:@"user%ld.png",(long)indexPath.row];
-//    
-//    cell.contactImage.image = [UIImage imageNamed:imageName];
-    
     cell.contactImage.image = [UIImage imageNamed:[photos objectAtIndex:indexPath.row]];
+    
+    cell.contactName.text = [names objectAtIndex:indexPath.row];
     
     [cell setBackgroundColor:[UIColor orangeColor]];
     
     return cell;
-    
-    
-    
-
-    
     
 }
 

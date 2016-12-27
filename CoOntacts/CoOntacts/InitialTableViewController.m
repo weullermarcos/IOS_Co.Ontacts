@@ -238,13 +238,12 @@
     
     NSMutableString *user = [[NSMutableString alloc] initWithString:@"user"];
     
-    int number = arc4random_uniform(5);
+    int number = arc4random_uniform(20);
     
-    if(number < 0 || number > 5)
+    if(number < 0 || number > 20)
         number = 0;
     
     [user appendString:[NSString stringWithFormat:@"%d", number]];
-    [user appendString:@".png"];
     
     [contato setImagem: UIImagePNGRepresentation([UIImage imageNamed:user])];
     

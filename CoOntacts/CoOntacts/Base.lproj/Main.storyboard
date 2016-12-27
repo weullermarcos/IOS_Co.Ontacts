@@ -529,6 +529,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="contactImage" destination="rXV-AW-itI" id="Qx1-2Z-61f"/>
+                                    <outlet property="contactName" destination="9h7-ER-SIQ" id="9GC-89-S6C"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
