@@ -19,6 +19,7 @@
 		57FFE7751D5BEE3700A8F4C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FFE7731D5BEE3700A8F4C3 /* LaunchScreen.storyboard */; };
 		D30795331DD8D6260061DED1 /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D30795321DD8D6260061DED1 /* AddContactViewController.m */; };
 		D31E01201E05878C00745324 /* ContactDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D31E011F1E05878C00745324 /* ContactDetailViewController.m */; };
+		D33E48C41E11EDE6004E54F0 /* ContactCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D33E48C31E11EDE6004E54F0 /* ContactCollectionViewCell.m */; };
 		D374E1461DDB88600062E5A8 /* ContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D374E1441DDB88600062E5A8 /* ContactTableViewCell.m */; };
 		D374E1471DDB88600062E5A8 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D374E1451DDB88600062E5A8 /* ContactTableViewCell.xib */; };
 		D3C709741E0D4C9800877303 /* Contato+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C709711E0D4C9800877303 /* Contato+CoreDataClass.m */; };
@@ -52,6 +53,8 @@
 		D30795321DD8D6260061DED1 /* AddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContactViewController.m; sourceTree = "<group>"; };
 		D31E011E1E05878C00745324 /* ContactDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailViewController.h; sourceTree = "<group>"; };
 		D31E011F1E05878C00745324 /* ContactDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailViewController.m; sourceTree = "<group>"; };
+		D33E48C21E11EDE6004E54F0 /* ContactCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactCollectionViewCell.h; sourceTree = "<group>"; };
+		D33E48C31E11EDE6004E54F0 /* ContactCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactCollectionViewCell.m; sourceTree = "<group>"; };
 		D374E1431DDB88600062E5A8 /* ContactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTableViewCell.h; sourceTree = "<group>"; };
 		D374E1441DDB88600062E5A8 /* ContactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTableViewCell.m; sourceTree = "<group>"; };
 		D374E1451DDB88600062E5A8 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
@@ -106,7 +109,7 @@
 				D30795301DD8C7C60061DED1 /* TableViewControllers */,
 				D307952F1DD8C7AF0061DED1 /* ViewControllers */,
 				D3E533141DBEAFB80018669C /* Entities */,
-				D374E1421DDB87A50062E5A8 /* XibFiles */,
+				D374E1421DDB87A50062E5A8 /* Cells */,
 				57FFE7651D5BEE3700A8F4C3 /* AppDelegate.h */,
 				57FFE7661D5BEE3700A8F4C3 /* AppDelegate.m */,
 				57FFE76B1D5BEE3700A8F4C3 /* Main.storyboard */,
@@ -157,14 +160,16 @@
 			name = TableViewControllers;
 			sourceTree = "<group>";
 		};
-		D374E1421DDB87A50062E5A8 /* XibFiles */ = {
+		D374E1421DDB87A50062E5A8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				D33E48C21E11EDE6004E54F0 /* ContactCollectionViewCell.h */,
+				D33E48C31E11EDE6004E54F0 /* ContactCollectionViewCell.m */,
 				D374E1431DDB88600062E5A8 /* ContactTableViewCell.h */,
 				D374E1441DDB88600062E5A8 /* ContactTableViewCell.m */,
 				D374E1451DDB88600062E5A8 /* ContactTableViewCell.xib */,
 			);
-			name = XibFiles;
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		D3C709791E0DA02D00877303 /* Frameworks */ = {
@@ -277,6 +282,7 @@
 				D30795331DD8D6260061DED1 /* AddContactViewController.m in Sources */,
 				57FFE76A1D5BEE3700A8F4C3 /* ViewController.m in Sources */,
 				D31E01201E05878C00745324 /* ContactDetailViewController.m in Sources */,
+				D33E48C41E11EDE6004E54F0 /* ContactCollectionViewCell.m in Sources */,
 				0B34DBD91D89B65200EBD976 /* InitialTableViewController.m in Sources */,
 				57FFE7671D5BEE3700A8F4C3 /* AppDelegate.m in Sources */,
 				D3C709801E0DA43200877303 /* MapPin.m in Sources */,

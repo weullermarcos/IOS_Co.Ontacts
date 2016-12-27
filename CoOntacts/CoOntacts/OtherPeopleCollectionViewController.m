@@ -7,6 +7,7 @@
 //
 
 #import "OtherPeopleCollectionViewController.h"
+#import "ContactCollectionViewCell.h"
 
 @interface OtherPeopleCollectionViewController (){
 
@@ -18,7 +19,7 @@
 
 @implementation OtherPeopleCollectionViewController
 
-static NSString * const reuseIdentifier = @"Cell";
+static NSString * const reuseIdentifier = @"ContactCell";
 
 - (void)viewDidLoad {
     
@@ -35,16 +36,6 @@ static NSString * const reuseIdentifier = @"Cell";
               @"user0.png", @"user1.png", @"user2.png", @"user3.png", @"user4.png", @"user5.png",
               nil];
     
-    
-    
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
 }
 
 
@@ -60,21 +51,36 @@ static NSString * const reuseIdentifier = @"Cell";
 
     //Retorna o número de objetos do array
     return [photos count];
+
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
-    static NSString *identifier = @"Cell";
-    
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    
+//    static NSString *identifier = @"Cell";
+//    
+//    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+//    
 //    UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:100];
 //    recipeImageView.image = [UIImage imageNamed:[photos objectAtIndex:indexPath.row]];
     
+    
+    
+    ContactCollectionViewCell *cell = (ContactCollectionViewCell*) [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    
+//    NSString * imageName = [NSString stringWithFormat:@"user%ld.png",(long)indexPath.row];
+//    
+//    cell.contactImage.image = [UIImage imageNamed:imageName];
+    
+    cell.contactImage.image = [UIImage imageNamed:[photos objectAtIndex:indexPath.row]];
+    
     [cell setBackgroundColor:indexPath.row%2==0?[UIColor blackColor]:[UIColor grayColor]];
     
-    
     return cell;
+    
+    
+    
+
+    
     
 }
 

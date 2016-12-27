@@ -64,7 +64,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuG-GH-C1B">
                                 <state key="normal" title="Conheça outras pessoas que usam Co.Ontacts"/>
                                 <connections>
-                                    <segue destination="kIb-RH-Get" kind="show" id="xQa-ba-Ndd"/>
+                                    <segue destination="Gtx-uY-vJ1" kind="show" id="yL9-ZZ-0hs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -99,46 +99,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Si-M5-VDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3412" y="1174.3628185907048"/>
-        </scene>
-        <!--Other People Collection View Controller-->
-        <scene sceneID="w6K-rJ-tFA">
-            <objects>
-                <collectionViewController id="kIb-RH-Get" customClass="OtherPeopleCollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="0nR-CV-Caj" customClass="O">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9Fi-ea-qTu">
-                            <size key="itemSize" width="100" height="100"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="61y-h7-2rG">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NCw-5b-zCQ">
-                                            <frame key="frameInset" width="100" height="100"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                    </subviews>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="kIb-RH-Get" id="cS7-mN-jhI"/>
-                            <outlet property="delegate" destination="kIb-RH-Get" id="RTk-ki-AX0"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kco-D2-em9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3412" y="1962.3688155922041"/>
         </scene>
         <!--Initial Table View Controller-->
         <scene sceneID="IWZ-hH-u7g">
@@ -523,6 +483,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ogw-jL-xze" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2724" y="1174"/>
+        </scene>
+        <!--Other People Collection View Controller-->
+        <scene sceneID="5Uk-Ma-yj4">
+            <objects>
+                <collectionViewController id="Gtx-uY-vJ1" customClass="OtherPeopleCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="E2g-eH-lTq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L6P-oI-vKe">
+                            <size key="itemSize" width="100" height="120"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ContactCell" id="Czz-Eu-6Rl" customClass="ContactCollectionViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rXV-AW-itI">
+                                            <frame key="frameInset" width="100" height="100"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="rXV-AW-itI" secondAttribute="trailing" id="Nqk-sT-qfC"/>
+                                    <constraint firstItem="rXV-AW-itI" firstAttribute="top" secondItem="Czz-Eu-6Rl" secondAttribute="top" id="Tc9-hF-Nc4"/>
+                                    <constraint firstItem="rXV-AW-itI" firstAttribute="leading" secondItem="Czz-Eu-6Rl" secondAttribute="leading" id="eFy-SY-INO"/>
+                                    <constraint firstAttribute="bottom" secondItem="rXV-AW-itI" secondAttribute="bottom" id="v8d-2G-OLf"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="contactImage" destination="rXV-AW-itI" id="Qx1-2Z-61f"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Gtx-uY-vJ1" id="XqL-xL-esu"/>
+                            <outlet property="delegate" destination="Gtx-uY-vJ1" id="4gG-6B-4Wk"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DgJ-po-c4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3412" y="1963"/>
         </scene>
     </scenes>
     <resources>
