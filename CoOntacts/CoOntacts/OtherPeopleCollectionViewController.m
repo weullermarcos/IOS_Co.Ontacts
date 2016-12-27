@@ -73,7 +73,7 @@ static NSString * const reuseIdentifier = @"ContactCell";
     
     cell.contactImage.image = [UIImage imageNamed:[photos objectAtIndex:indexPath.row]];
     
-    [cell setBackgroundColor:indexPath.row%2==0?[UIColor blackColor]:[UIColor grayColor]];
+    [cell setBackgroundColor:[UIColor orangeColor]];
     
     return cell;
     
