@@ -2,7 +2,7 @@
 //  PageContentViewController.m
 //  CoOntacts
 //
-//  Created by Hoff Silva on 14/09/16.
+//  Created by Weuller Marcos on 14/09/16.
 //  Copyright © 2016 Weuller. All rights reserved.
 //
 
@@ -20,6 +20,8 @@
     self.label_Instruction.text = self.titleText;
     
     self.label_Content.text = self.contentText;
+    
+    self.image.image = self.localImage;
     
     if(self.pageIndex == 2){
         

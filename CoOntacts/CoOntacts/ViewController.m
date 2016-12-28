@@ -23,6 +23,8 @@
     _pageTitles = @[@"Bem Vindo ao Co.ontacts", @"Prático e Rápido", @"O Contato Direto"];
     
     _pageContents = @[@"Seus contatos na palma da sua mão", @"Conteudo 2", @"Conteudo 3"];
+    
+    _pageImages = @[@"origami1", @"origami2", @"origami3"];
 
     
     // Create page view controller
@@ -88,6 +90,12 @@
     
     pageContentViewController.titleText = self.pageTitles[index];
     pageContentViewController.contentText = self.pageContents[index];
+    
+    
+    pageContentViewController.localImage = [UIImage imageNamed:self.pageImages[index]];
+    
+    
+    
     pageContentViewController.pageIndex = index;
     
   

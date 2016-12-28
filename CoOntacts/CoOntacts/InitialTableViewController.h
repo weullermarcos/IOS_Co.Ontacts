@@ -2,7 +2,7 @@
 //  InitialTableViewController.h
 //  CoOntacts
 //
-//  Created by Hoff Silva on 14/09/16.
+//  Created by Weuller Marcos on 14/09/16.
 //  Copyright © 2016 Weuller. All rights reserved.
 //
 

@@ -13,6 +13,7 @@
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSArray *pageTitles;
 @property (strong, nonatomic) NSArray *pageContents;
+@property (strong, nonatomic) NSArray *pageImages;
 
 @end
 

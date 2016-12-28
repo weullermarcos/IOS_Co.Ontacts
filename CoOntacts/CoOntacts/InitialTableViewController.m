@@ -2,7 +2,7 @@
 //  InitialTableViewController.m
 //  CoOntacts
 //
-//  Created by Hoff Silva on 14/09/16.
+//  Created by Weuller Marcos on 14/09/16.
 //  Copyright © 2016 Weuller. All rights reserved.
 //
 
@@ -110,6 +110,15 @@
     
 }
 
+
+//Direciona para a tela de novo contato
+-(IBAction)Add:(id)sender
+{
+    //Direciona para a proxima tela
+    [self performSegueWithIdentifier:@"segueAddContatct" sender:self];
+    
+}
+
 - (void) getOnlineUsers{
 
     //Requisicao Web
@@ -125,14 +134,6 @@
     [task resume];
     
     //Fim
-    
-}
-
-//Direciona para a tela de novo contato
--(IBAction)Add:(id)sender
-{
-    //Direciona para a proxima tela
-    [self performSegueWithIdentifier:@"segueAddContatct" sender:self];
     
 }
 
@@ -181,7 +182,7 @@
         }
         else {
             
-            NSLog(@"Dados recebidos: %@", posts);
+            //NSLog(@"Dados recebidos: %@", posts);
             
             for (NSDictionary *post in posts) {
                 
@@ -191,7 +192,7 @@
             }
             
             //recarrega os dados da tabela..
-            [self.tableView reloadData];
+            //[self.tableView reloadData];
             
         }
     }
