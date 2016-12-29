@@ -22,9 +22,9 @@
     
     _pageTitles = @[@"Bem Vindo ao Co.ontacts", @"Prático e Rápido", @"O Contato Direto"];
     
-    _pageContents = @[@"Seus contatos na palma da sua mão", @"Conteudo 2", @"Conteudo 3"];
+    _pageContents = @[@"Seus contatos na palma da sua mão", @"Seus contatos de forma rápida", @"A qualquer momento, em qualquer lugar"];
     
-    _pageImages = @[@"origami1", @"origami2", @"origami3"];
+    _pageImages = @[@"initialImage1", @"initialImage2", @"initialImage3"];
 
     
     // Create page view controller
