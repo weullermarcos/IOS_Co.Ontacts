@@ -130,6 +130,9 @@
         [contato setNome:self.name.text];
         [contato setEmail:self.email.text];
         [contato setTelefone:self.phone.text];
+        //Setando latitude e longitude de Brasilia como default
+        [contato setLatitude:@"-15.000"];
+        [contato setLongitude:@"-47.000"];
         [contato setDescricao:self.contactDescription.text];
         
         //Salvando a Imagem
