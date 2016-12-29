@@ -113,7 +113,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7RY-b8-ZCR" id="cFc-OQ-aKD">
-                                    <frame key="frameInset" width="375" height="44"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZU2-d9-s8b">
@@ -524,9 +524,9 @@
                                     <constraint firstItem="rXV-AW-itI" firstAttribute="leading" secondItem="Czz-Eu-6Rl" secondAttribute="leadingMargin" constant="2" id="CdT-ep-v59"/>
                                     <constraint firstItem="rXV-AW-itI" firstAttribute="top" secondItem="Czz-Eu-6Rl" secondAttribute="topMargin" id="T2t-T1-BQ6"/>
                                     <constraint firstItem="9h7-ER-SIQ" firstAttribute="top" secondItem="rXV-AW-itI" secondAttribute="bottom" constant="3" id="YdR-YB-mU9"/>
-                                    <constraint firstItem="9h7-ER-SIQ" firstAttribute="leading" secondItem="Czz-Eu-6Rl" secondAttribute="leadingMargin" constant="34" id="cc8-pD-OXt"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="rXV-AW-itI" secondAttribute="trailing" constant="2" id="ciV-qO-T7c"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="9h7-ER-SIQ" secondAttribute="bottom" id="eZp-aE-mQv"/>
+                                    <constraint firstItem="9h7-ER-SIQ" firstAttribute="centerX" secondItem="Czz-Eu-6Rl" secondAttribute="centerX" id="wZV-L2-OJ4"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="contactImage" destination="rXV-AW-itI" id="Qx1-2Z-61f"/>
