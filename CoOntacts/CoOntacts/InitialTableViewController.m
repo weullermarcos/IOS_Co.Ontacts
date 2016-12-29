@@ -192,7 +192,7 @@
             }
             
             //recarrega os dados da tabela..
-            //[self.tableView reloadData];
+            [self.tableView reloadData];
             
         }
     }
@@ -312,7 +312,9 @@
 - (void) configurarCelula: (UITableViewCell *) cell noIndexPath: (NSIndexPath *) indexPath {
     
     Contato *contato = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [cell.textLabel setText:contato.nome];
+    //[cell.textLabel setText:contato.nome];
+    ContactTableViewCell * cellCast = (ContactTableViewCell*)cell;
+    [cellCast.contactName setText:contato.nome];
 }
 
 // Override to support conditional editing of the table view.
