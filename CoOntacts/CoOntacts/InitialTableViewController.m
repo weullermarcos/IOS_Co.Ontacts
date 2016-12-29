@@ -16,6 +16,10 @@
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
+@property (strong, nonatomic) UIActivityIndicatorView *activityView;
+
+@property Boolean disableActivityIndicator;
+
 //Propriedade para dados retornados do webservice
 @property (strong, nonatomic) NSMutableData *bytesResposta;
 
@@ -30,6 +34,8 @@
     
     self.tableView.delegate = self;
     
+    _disableActivityIndicator = false;
+    
     UINib *cell = [UINib nibWithNibName:@"ContactTableViewCell" bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:cell forCellReuseIdentifier:@"ContactTableViewCell"];
     
@@ -39,6 +45,12 @@
     //Instancia para fazer uma nova requisicao
     _bytesResposta = [NSMutableData new];
     
+    //Adicionando ActivityIndicator
+    _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    _activityView.color = [UIColor orangeColor];
+    _activityView.center=self.view.center;
+    [_activityView startAnimating];
+    [self.view addSubview:_activityView];
     
 }
 
@@ -61,8 +73,11 @@
         }
         else{
             
+            _disableActivityIndicator = true;
+            
             //Sucesso
             [self.tableView reloadData];
+            
         }
 
     }
@@ -191,6 +206,8 @@
                 
             }
             
+            _disableActivityIndicator = true;
+            
             //recarrega os dados da tabela..
             [self.tableView reloadData];
             
@@ -291,6 +308,19 @@
     
     //Seta a imagem recuperada
     [cell.contactImage setImage:image];
+    
+    
+    if(_disableActivityIndicator == true){
+        
+        //Desativa ActivityIndicator
+        [_activityView stopAnimating];
+        
+        //remove view
+        [self.view willRemoveSubview:_activityView];
+        
+        _disableActivityIndicator = false;
+    
+    }
     
     return cell;
     
