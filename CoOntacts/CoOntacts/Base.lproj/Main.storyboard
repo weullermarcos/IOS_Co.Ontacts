@@ -33,7 +33,7 @@
                         <viewControllerLayoutGuide type="top" id="O81-46-pQv"/>
                         <viewControllerLayoutGuide type="bottom" id="Y0A-G6-vGz"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="drR-rG-IyC">
+                    <view key="view" contentMode="scaleToFill" id="drR-rG-IyC" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -85,6 +85,9 @@
                             <constraint firstItem="bI8-JH-iM6" firstAttribute="top" secondItem="bwI-eN-LCl" secondAttribute="bottom" constant="54" id="lgG-6n-tXH"/>
                             <constraint firstItem="Y0A-G6-vGz" firstAttribute="top" secondItem="fuG-GH-C1B" secondAttribute="bottom" constant="80" id="qwz-eU-Ynx"/>
                         </constraints>
+                        <connections>
+                            <action selector="TouchDown:" destination="WMP-kp-FSB" eventType="touchDown" id="Ww6-Pj-kBL"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="pVj-qW-82c"/>
                     <connections>
@@ -151,7 +154,7 @@
                         <viewControllerLayoutGuide type="top" id="rwF-zz-TKi"/>
                         <viewControllerLayoutGuide type="bottom" id="x8S-Ct-CbA"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kzH-yB-Ccy">
+                    <view key="view" contentMode="scaleToFill" id="kzH-yB-Ccy" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -255,6 +258,9 @@
                             <constraint firstItem="x8S-Ct-CbA" firstAttribute="top" secondItem="7Ko-lp-gth" secondAttribute="bottom" constant="20" id="vz5-lA-cD8"/>
                             <constraint firstItem="2W9-l9-8Z8" firstAttribute="top" secondItem="3KC-x3-AQ0" secondAttribute="bottom" constant="8" symbolic="YES" id="wSs-x0-OA8"/>
                         </constraints>
+                        <connections>
+                            <action selector="TouchDown:" destination="XbC-8B-Xgx" eventType="touchDown" id="NUJ-rK-8qr"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Adicionar Contato" id="nwZ-po-men"/>
                     <connections>
