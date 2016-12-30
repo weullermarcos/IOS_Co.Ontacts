@@ -62,7 +62,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuG-GH-C1B">
-                                <state key="normal" title="Conheça outras pessoas que usam Co.Ontacts"/>
+                                <state key="normal" title="Conheça pessoas que usam Co.Ontacts"/>
                                 <connections>
                                     <segue destination="Gtx-uY-vJ1" kind="show" id="yL9-ZZ-0hs"/>
                                 </connections>

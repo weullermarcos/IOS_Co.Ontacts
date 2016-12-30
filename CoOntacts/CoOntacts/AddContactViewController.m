@@ -10,16 +10,27 @@
 #import "AppDelegate.h"
 #import "Contato+CoreDataClass.h"
 
+#define IPHONE5HEIGHT (568)
+
 
 @interface AddContactViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
+
+@property CGFloat currentWidth;
+@property CGFloat currentHeight;
 
 @end
 
 @implementation AddContactViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
+    _currentHeight = self.view.bounds.size.height;
+    _currentWidth = self.view.bounds.size.width;
+    
 
+    
     //Tornando a imagem clicavel
     [self.userImage setUserInteractionEnabled:YES];
     
@@ -32,34 +43,6 @@
     [self.email setDelegate:self];
     [self.contactDescription setDelegate:self];
     
-}
-
-
-#pragma mark - UITextFieldDelegate
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
-    
-    if (textField == self.name) {
-        
-        [self.phone becomeFirstResponder];
-    }
-    
-    if (textField == self.phone) {
-        
-        [self.email becomeFirstResponder];
-    }
-    
-    if (textField == self.email) {
-        
-        [self.contactDescription becomeFirstResponder];
-    }
-    
-    if (textField == self.contactDescription) {
-        
-        [textField resignFirstResponder]; //isso faz o teclado se esconder
-    }
-    
-    return YES;
 }
 
 
@@ -187,6 +170,80 @@
     [alert addAction:ok];
     
     
+}
+
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    
+    if (textField == self.name) {
+        
+        [self.phone becomeFirstResponder];
+    }
+    
+    if (textField == self.phone) {
+        
+        [self.email becomeFirstResponder];
+    }
+    
+    if (textField == self.email) {
+        
+        [self.contactDescription becomeFirstResponder];
+    }
+    
+    if (textField == self.contactDescription) {
+        
+        [textField resignFirstResponder]; //isso faz o teclado se esconder
+    }
+    
+    return YES;
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    
+    
+    if (textField == self.contactDescription && _currentHeight <= IPHONE5HEIGHT) {
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:)
+                                                     name:UIKeyboardDidShowNotification object:nil];
+    }
+    
+    return YES;
+}
+
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    
+    if (textField == self.contactDescription && _currentHeight <= IPHONE5HEIGHT) {
+    
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:)
+                                                     name:UIKeyboardDidHideNotification object:nil];
+        
+        [self.view endEditing:YES];
+        
+    }
+
+    return YES;
+}
+
+
+- (void)keyboardDidShow:(NSNotification *)notification
+{
+
+    [self.view setFrame:CGRectMake(0,-110,_currentWidth,_currentHeight)];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
+
+-(void)keyboardDidHide:(NSNotification *)notification
+{
+    
+    [self.view setFrame:CGRectMake(0,0,_currentWidth,_currentHeight)];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
 }
 
 
